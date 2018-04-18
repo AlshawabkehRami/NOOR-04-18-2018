@@ -268,24 +268,16 @@ public class TheReports {
         txt_male_wait.sendKeys("بنين", Keys.ENTER);
 
         Actions actions = new Actions(browserQA);
-        try {
-            WebElement drop_down_managements_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_managements_LocatorIS));
-            drop_down_managements_LocatorWait.click();
-        } catch (Exception e) {
-            WebElement drop_down_managements_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_managements_LocatorIS));
-            drop_down_managements_LocatorWait.click();
-        }
+        Thread.sleep(1000);
+        WebElement drop_down_managements_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_managements_LocatorIS));
+        drop_down_managements_LocatorWait.click();
 
         WebElement txt_drop_down_managements_Locator_Element = browserQA.findElement(txt_drop_down_managements_LocatorIS);
         actions.moveToElement(txt_drop_down_managements_Locator_Element).sendKeys("الحد الغربي", Keys.ENTER).build().perform();
 
-        try {
-            WebElement education_office_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_LocatorIS));
-            education_office_LocatorWait.click();
-        } catch (Exception e) {
-            WebElement education_office_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_LocatorIS));
-            education_office_LocatorWait.click();
-        }
+        Thread.sleep(1000);
+        WebElement education_office_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_LocatorIS));
+        education_office_LocatorWait.click();
 
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_Locator_txtIS)).sendKeys("مكتب الخالدية", Keys.ENTER);
@@ -517,20 +509,16 @@ public class TheReports {
         ddlDistrictLocatorWait.click();
 
         browserQA.findElement(ddlDistrictSearchLocatorSWO).sendKeys("ادارة تعليم الحد الغربي(بنين)", Keys.ENTER);
-        Thread.sleep(2000);
 
+        Thread.sleep(1000);
         WebElement ddlSupervisionCenteLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenteLocatorSWO));
         ddlSupervisionCenteLocatorWait.click();
 
         browserQA.findElement(ddlSupervisionCenteSearchLocatorSWO).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
 
-        try {
-            WebElement ibtnSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLocatorSWO));
-            ibtnSearchLocatorWait.click();
-        } catch (Exception e) {
-            WebElement ibtnSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLocatorSWO));
-            ibtnSearchLocatorWait.click();
-        }
+
+        WebElement ibtnSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLocatorSWO));
+        ibtnSearchLocatorWait.click();
 
 
         By ReportTitleInsidLoactor = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");

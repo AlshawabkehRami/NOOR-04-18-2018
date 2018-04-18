@@ -39,6 +39,7 @@ public class TheReports {
 
     //بيانات المباني
     private By ReportNameLoactorBI = By.linkText("بيانات المباني");
+
     @Test
     public void buildingInformation() {
 
@@ -59,13 +60,14 @@ public class TheReports {
         WebElement NameOfTheReportLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameOfTheReportLocator));
         String NameOfTheReportString = browserQA.findElement(NameOfTheReportLocator).getText();
         String NameOfThePageLString = "بيانات المباني";
-        Assert.assertEquals(NameOfTheReportString , NameOfThePageLString , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(NameOfTheReportString, NameOfThePageLString, "التقرير المطلوب غير متوفر");
     }
 
 
     private By ReportLinkLocatorDSTC = By.linkText("توزيع الطلاب على الفصول");
     private By ddlStudylevelLocatorDSTC = By.id("select2-ctl00_PlaceHolderMain_ddlStudylevel-container");
     private By ddlSchoolCategorizationLocatorDSTC = By.id("select2-ctl00_PlaceHolderMain_ddlSchoolCategorization-container");
+
     //توزيع الطلاب على الفصول
     @Test
     public void DSTC() {
@@ -83,16 +85,16 @@ public class TheReports {
 
         WebElement ddlStudylevelLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlStudylevelLocatorDSTC));
         ddlStudylevelLocatorWait.click();
-        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("المرحلة الثانوية" , Keys.ENTER);
+        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("المرحلة الثانوية", Keys.ENTER);
 
         try {
             WebElement ddlSchoolCategorizationLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolCategorizationLocatorDSTC));
             ddlSchoolCategorizationLocatorWait.click();
-            browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("حكومي" , Keys.ENTER);
+            browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("حكومي", Keys.ENTER);
         } catch (Exception e) {
             WebElement ddlSchoolCategorizationLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolCategorizationLocatorDSTC));
             ddlSchoolCategorizationLocatorWait.click();
-            browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("حكومي" , Keys.ENTER);
+            browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("حكومي", Keys.ENTER);
         }
 
         try {
@@ -108,7 +110,7 @@ public class TheReports {
         WebElement ReportTitleLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLocator));
         String ReportTitleString = browserQA.findElement(ReportTitleLocator).getText();
         String ReportNameString = "توزيع الطلاب على الفصول مكتب";
-        Assert.assertEquals(ReportTitleString , ReportNameString , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportTitleString, ReportNameString, "التقرير المطلوب غير متوفر");
     }
 
 
@@ -133,12 +135,12 @@ public class TheReports {
         WebElement drop_down_1_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_l_LocatorSC));
         drop_down_1_Locator_wait.click();
         WebElement txt_field_1_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_1_Locator_wait.sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        txt_field_1_Locator_wait.sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         Thread.sleep(300);
         WebElement drop_down_2_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_2_LocatorSC));
         drop_down_2_Locator_wait.click();
         WebElement txt_field_2_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_2_Locator_wait.sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        txt_field_2_Locator_wait.sendKeys("Selenium Form Dont Delete", Keys.ENTER);
 
         try {
             WebElement btn_search_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
@@ -152,7 +154,7 @@ public class TheReports {
         WebElement actual_resultt = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual__result = actual_resultt.getText();
         System.out.println(actual_resultt);
-        Assert.assertEquals(actual__result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual__result, expected_result, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -181,7 +183,7 @@ public class TheReports {
         SupervisionCenterLocatorWait.click();
 
         WebElement SearchSupervisionCenterLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        SearchSupervisionCenterLocatorWait.sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        SearchSupervisionCenterLocatorWait.sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
 
         Thread.sleep(300);
 
@@ -189,7 +191,7 @@ public class TheReports {
         FormNameLocatorWait.click();
 
         WebElement FormNameSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        FormNameSearchLocatorWait.sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        FormNameSearchLocatorWait.sendKeys("Selenium Form Dont Delete", Keys.ENTER);
 
         Thread.sleep(300);
 
@@ -206,7 +208,7 @@ public class TheReports {
         By actual_reuslt = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[5]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[8]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual__result = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_reuslt));
         String actual___reuslt = actual__result.getText();
-        Assert.assertEquals(actual___reuslt , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual___reuslt, expected_result, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -229,7 +231,7 @@ public class TheReports {
         WebElement drop_down_list_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(Drop_down_list_LocatorNSSB));
         drop_down_list_Locator_wait.click();
         WebElement txt_field_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_wait.sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        txt_field_wait.sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
 
         try {
             WebElement btn_search_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
@@ -243,7 +245,7 @@ public class TheReports {
         By actual_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual__result = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual___result = actual__result.getText();
-        Assert.assertEquals(expected_result , actual___result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(expected_result, actual___result, "التقرير المطلوب غير متوفر");
     }
 
     private By TheReportNameLocatorAI = By.linkText("المدارس التي قامت بتعبئة الاستمارة ولم يتم اعتمادها من مدير المدرسة");
@@ -265,7 +267,7 @@ public class TheReports {
         WebElement drop_down_list_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_LocatorAI));
         drop_down_list_Locator_wait.click();
         WebElement txt_field_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_Locator_wait.sendKeys("Form12" , Keys.ENTER);
+        txt_field_Locator_wait.sendKeys("Form12", Keys.ENTER);
         Thread.sleep(300);
         WebElement btn_search_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
         btn_search_Locator_wait.click();
@@ -274,7 +276,7 @@ public class TheReports {
         WebElement actual__reuslt = waitQA.until(ExpectedConditions.visibilityOfElementLocated(acutal_result));
         String actual___result = actual__reuslt.getText();
         System.out.println(actual___result);
-        Assert.assertEquals(actual___result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual___result, expected_result, "التقرير المطلوب غير متوفر");
 
 
     }
@@ -298,7 +300,7 @@ public class TheReports {
         WebElement drop_down_list_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_LocatorSHCF));
         drop_down_list_Locator_wait.click();
         WebElement txt_field_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_Locator_wait.sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        txt_field_Locator_wait.sendKeys("Selenium Form Dont Delete", Keys.ENTER);
         Thread.sleep(300);
         WebElement btn_search_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
         btn_search_Locator_wait.click();
@@ -306,7 +308,7 @@ public class TheReports {
         By actual_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[4]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual__result = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual___result = actual__result.getText();
-        Assert.assertEquals(actual___result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual___result, expected_result, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -329,7 +331,7 @@ public class TheReports {
         WebElement drop_down_list_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_LocatorSDD));
         drop_down_list_Locator_wait.click();
         WebElement txt_field_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        txt_field_Locator_wait.sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        txt_field_Locator_wait.sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         Thread.sleep(300);
         WebElement btn_search_Locator_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
         btn_search_Locator_wait.click();
@@ -337,7 +339,7 @@ public class TheReports {
         By actual_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[4]/div/span/div/table/tbody/tr[5]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[9]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual_result_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual__result = actual_result_wait.getText();
-        Assert.assertEquals(actual__result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual__result, expected_result, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -362,7 +364,7 @@ public class TheReports {
         ReportLOcatrWait.click();
         WebElement OfficeNameLOcaterWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(OfficeNameLOcaterSDES));
         OfficeNameLOcaterWait.click();
-        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
 
         Thread.sleep(1000);
         WebElement SearchBTNLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
@@ -398,7 +400,7 @@ public class TheReports {
         WebElement ReportTitleLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLocator));
         String ReportTitle = browserQA.findElement(ReportTitleLocator).getText();
         String ReportTitleName = "بيانات مسؤولي الامن والسلامة في المدارس";
-        Assert.assertEquals(ReportTitle , ReportTitleName , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportTitle, ReportTitleName, "التقرير المطلوب غير متوفر");
     }
 
     private By ReportLinkLocatorSASAR = By.linkText("الأمن والسلامة - نسبة التقييم");
@@ -421,22 +423,18 @@ public class TheReports {
         browserQA.findElement(ReportLinkLocatorSASAR).click();
         WebElement DDLFormNameLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLFormNameLocatorSASAR));
         DDLFormNameLocatorWait.click();
-        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        browserQA.findElement(DDLSearchSendOptionTxtLoactor).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
 
-        try {
-            WebElement SearchButtonLOcatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
-            SearchButtonLOcatorWait.click();
-        } catch (Exception e) {
-            WebElement SearchButtonLOcatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
-            SearchButtonLOcatorWait.click();
-        }
+
+        WebElement SearchButtonLOcatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator));
+        SearchButtonLOcatorWait.click();
 
         By ReportTitleLoactr = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div/div[7]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement ReportTitleLoactrWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLoactr));
         String ReportTilte = browserQA.findElement(ReportTitleLoactr).getText();
         String NameOfTheReport = "الأمن والسلامة-نسب التقييم على مستوى الإدارة";
 
-        Assert.assertEquals(ReportTilte , NameOfTheReport , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportTilte, NameOfTheReport, "التقرير المطلوب غير متوفر");
     }
 
 
@@ -466,7 +464,7 @@ public class TheReports {
         DDlFormNameLocatorWait.click();
 
         WebElement DDlFormNameSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor));
-        DDlFormNameSearchLocatorWait.sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        DDlFormNameSearchLocatorWait.sendKeys("Selenium Form Dont Delete", Keys.ENTER);
 
         Thread.sleep(1000);
         try {
@@ -484,7 +482,7 @@ public class TheReports {
         String ReportName = browserQA.findElement(ReportTitleLoactor).getText();
         String NameOfTheReport = "الأمن والسلامة-نسب الإدخال على مستوى الإدارة";
 
-        Assert.assertEquals(ReportName , NameOfTheReport , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportName, NameOfTheReport, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -508,6 +506,6 @@ public class TheReports {
         By actual_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[4]/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[6]/td[3]/table/tbody/tr/td/div/div[1]/span");
         WebElement actual_result_wait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual__result = actual_result_wait.getText();
-        Assert.assertEquals(actual__result , expected_result , "البيانات غير صحيحة");
+        Assert.assertEquals(actual__result, expected_result, "البيانات غير صحيحة");
     }
 }
