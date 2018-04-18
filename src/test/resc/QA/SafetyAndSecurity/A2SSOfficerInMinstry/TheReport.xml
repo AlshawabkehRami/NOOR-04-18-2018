@@ -28,14 +28,10 @@
                     <include name="inputRatio"/>
                     <include name="aasessmentRateReport"/>
                     <include name="studentsWithOwnershipOfTheSchoolBuilding"/>
-<!--
                     <include name="userDataInTheSchools"/>
--->
                 </methods>
             </class>
-<!--
             <class name="NoorProject.Other.NoorLogOut"/>
--->
         </classes>
 
     </test>
