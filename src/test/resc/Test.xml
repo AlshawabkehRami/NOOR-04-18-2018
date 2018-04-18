@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  ~ Created By  Rami AlShawabkeh  4/15/18 2:07 PM
+  -->
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="AllTestCase">
+
+
+    <suite-files>
+        <suite-file path="QA/SafetyAndSecurity/A1GeneralDirectorOfSchoolSecurityAndSafety/AllTestSuit.xml"/>
+        <suite-file path="QA/SafetyAndSecurity/A2SSOfficerInMinstry/AllTestSuit.xml"/>
+        <suite-file path="QA/SafetyAndSecurity/A3SSMangerInDistrict/AllTestSuit.xml"/>
+        <suite-file path="QA/SafetyAndSecurity/A4SSStaffInDistrict/AllTestSuit.xml"/>
+
+
+
+    </suite-files>
+
+</suite>

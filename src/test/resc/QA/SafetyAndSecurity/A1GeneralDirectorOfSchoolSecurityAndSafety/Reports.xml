@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  ~ Created By Rami AlShawabkeh  4/5/18 10:21 AM
+  -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="مدير عام الامن والسلامة المدرسية">
+
+    <test name="التقارير">
+        <classes>
+            <class name="NoorProject.Other.NoorLogin">
+                <methods>
+                    <include name="GeneralDirectorOfSchoolSecurityAndSafety"/>
+                </methods>
+            </class>
+            <class name="NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.TheReports.AllReports">
+                <methods>
+                    <include name="viewDistributeStudentsToClasses"/>
+                    <include name="buildingInformation"/>
+                    <include name="inputRatio"/>
+                    <include name="assessmentRate"/>
+                    <include name="infoSchool"/>
+                    <include name="schoolDataWithEducationalStages"/>
+                    <include name="userDataInTheSchools"/>
+                    <include name="studentsWithOwnershipOfTheSchoolBuilding"/>
+                </methods>
+            </class>
+            <class name="NoorProject.Other.NoorLogOut"/>
+
+        </classes>
+    </test>
+
+
+</suite>
