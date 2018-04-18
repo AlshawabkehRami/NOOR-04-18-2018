@@ -294,6 +294,9 @@ public class VisitsTypes {
             if (ActualResult.equals("لا يمكن الحذف لارتباط نوع الزيارة ببطاقة مدرسة.")) {
 
                 System.out.println("لا يمكن الحذف لارتباط نوع الزيارة ببطاقة مدرسة.");
+            } else if (ActualResult.equals(ExpectedResult)) {
+
+                System.out.println("تمت عملية الحذف بنجاح");
             } else {
                 Assert.fail("حدث خلل اثناء عملية الحفظ");
             }

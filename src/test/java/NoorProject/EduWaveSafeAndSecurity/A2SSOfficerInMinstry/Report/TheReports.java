@@ -356,13 +356,9 @@ public class TheReports {
         WebElement search_field_3_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_3_LocatorSDWES));
         search_field_3_LocatorWait.sendKeys("الخالدية", Keys.ENTER);
 
-        try {
-            WebElement btn_search_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorSDWES));
-            btn_search_LocatorWait.click();
-        } catch (Exception e) {
-            WebElement btn_search_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorSDWES));
-            btn_search_LocatorWait.click();
-        }
+        Thread.sleep(1000);
+        WebElement btn_search_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorSDWES));
+        btn_search_LocatorWait.click();
 
 
     }

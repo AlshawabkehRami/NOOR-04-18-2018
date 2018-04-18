@@ -497,7 +497,7 @@ public class AllReports {
 
         browserQA.findElement(DDLSupervisionCenteSearchLocatorSWOSB).sendKeys("عمان", Keys.ENTER);
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebElement ibtnSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorSWOSB));
         ibtnSearchLocatorWait.click();
 
