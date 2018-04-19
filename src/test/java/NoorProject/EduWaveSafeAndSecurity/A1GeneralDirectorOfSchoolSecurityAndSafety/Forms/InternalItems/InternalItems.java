@@ -51,7 +51,7 @@ public class InternalItems {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور", Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -90,7 +90,7 @@ public class InternalItems {
         int InternalItemsListSize = InternalItemsList.size();
         if (InternalItemsListSize <= 1) {
             int InternalItemsListSizeAdd1 = InternalItemsList.size() + 2;
-            String InternalItemsListSizeAdd1Format = String.format("%02d" , InternalItemsListSizeAdd1);
+            String InternalItemsListSizeAdd1Format = String.format("%02d", InternalItemsListSizeAdd1);
             By InternalItemsDesc1 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format + "_tbAddFormInternalItemDesc");
             Random Rand = new Random();
             int RandomNumber = Rand.nextInt(1000000);
@@ -104,11 +104,11 @@ public class InternalItems {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddValidationMessageLocator));
             String ActualResultAdd1 = browserQA.findElement(AddValidationMessageLocator).getText();
             String ExcpectedResultAdd1 = "تم إضافة البند الداخلي بنجاح.";
-            Assert.assertEquals(ActualResultAdd1 , ExcpectedResultAdd1 , "لم تتم عملية اضافة البند الداخلي بنجاح");
+            Assert.assertEquals(ActualResultAdd1, ExcpectedResultAdd1, "لم تتم عملية اضافة البند الداخلي بنجاح");
         }
         if (InternalItemsListSize >= 2 && InternalItemsListSize < 22) {
             int InternalItemsListSizeAdd2 = InternalItemsList.size() + 1;
-            String InternalItemsListSizeAdd1Format = String.format("%02d" , InternalItemsListSizeAdd2);
+            String InternalItemsListSizeAdd1Format = String.format("%02d", InternalItemsListSizeAdd2);
             By InternalItemsDesc2 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format + "_tbAddFormInternalItemDesc");
             Random Rand = new Random();
             int RandomNumber = Rand.nextInt(1000000);
@@ -121,11 +121,11 @@ public class InternalItems {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddValidationMessageLocator2));
             String ActualResultAdd1 = browserQA.findElement(AddValidationMessageLocator2).getText();
             String ExcpectedResultAdd1 = "تم إضافة البند الداخلي بنجاح.";
-            Assert.assertEquals(ActualResultAdd1 , ExcpectedResultAdd1 , "لم تتم عملية اضافة البند الداخلي بنجاح");
+            Assert.assertEquals(ActualResultAdd1, ExcpectedResultAdd1, "لم تتم عملية اضافة البند الداخلي بنجاح");
         }
         if (InternalItemsListSize >= 22) {
             int InternalItemsListSizeAdd3 = InternalItemsList.size();
-            String InternalItemsListSizeAdd1Format3 = String.format("%02d" , InternalItemsListSizeAdd3);
+            String InternalItemsListSizeAdd1Format3 = String.format("%02d", InternalItemsListSizeAdd3);
             By InternalItemsDesc2 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format3 + "_tbAddFormInternalItemDesc");
             Random Rand = new Random();
             int RandomNumber = Rand.nextInt(1000000);
@@ -138,7 +138,7 @@ public class InternalItems {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddValidationMessageLocator23));
             String ActualResultAdd1 = browserQA.findElement(AddValidationMessageLocator23).getText();
             String ExcpectedResultAdd1 = "تم إضافة البند الداخلي بنجاح.";
-            Assert.assertEquals(ActualResultAdd1 , ExcpectedResultAdd1 , "لم تتم عملية اضافة البند الداخلي بنجاح");
+            Assert.assertEquals(ActualResultAdd1, ExcpectedResultAdd1, "لم تتم عملية اضافة البند الداخلي بنجاح");
         }
     }
 
@@ -146,9 +146,26 @@ public class InternalItems {
 
     public void deleteInternalItems() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
+
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
         List SectionTableListDelet = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int TableSizeForSections = SectionTableListDelet.size();
@@ -268,9 +285,23 @@ public class InternalItems {
     public void editInternalItems() throws InterruptedException {
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور", Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
         List SectionTableListDelet = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int TableSizeForSections = SectionTableListDelet.size();
@@ -321,25 +352,23 @@ public class InternalItems {
                 By AddFormInternalItemDesc = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl03_tbAddFormInternalItemDesc");
                 By AddEvaluationWeight = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl03_tbAddEvaluationWeight");
                 By AddFormInternalItem = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl03_lbtnAddFormInternalItem");
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItemDesc)).sendKeys("Test");
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItemDesc)).sendKeys("Test");
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeight)).sendKeys("10");
-                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItem)).click();
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItem)).click();
                 By EditLinkLoactor = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnEdit");
-                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor)).click();
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor)).click();
                 By UpdateLink = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnUpdate");
-                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink)).click();
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink)).click();
                 By UpdateMessage = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-               waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
                 String UpdateActualREsult = browserQA.findElement(UpdateMessage).getText();
                 String UpdateExcprctedResult = "تم تعديل البند الداخلي بنجاح.";
                 if (UpdateActualREsult.equals(UpdateExcprctedResult)) {
                     System.out.println("تم تعديل البند الداخلي بنجاح.");
-                }
-               else if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
+                } else if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
                     Assert.fail();
                 }
-            }
-            else {
+            } else {
                 By InternalLink = By.id("ctl00_PlaceHolderMain_gvItems_ctl02_lbtnInternalItems");
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(InternalLink)).click();
                 List InternalList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
@@ -349,62 +378,33 @@ public class InternalItems {
                     By AddEvaluationWeight = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl03_tbAddEvaluationWeight");
                     By AddFormInternalItem = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl03_lbtnAddFormInternalItem");
                     waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItemDesc)).sendKeys("Test");
-                    WebElement AddEvaluationWeightWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeight));
-                    AddEvaluationWeightWait.sendKeys("10");
-                    WebElement AddFormInternalItemWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItem));
-                    AddFormInternalItemWait.click();
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeight)).sendKeys("10");
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddFormInternalItem)).click();
                     By EditLinkLoactor = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnEdit");
-
-                    WebElement EditLinkLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor));
-                    EditLinkLoactorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor)).click();
                     By UpdateLink = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnUpdate");
-                    WebElement UpdateLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink));
-                    UpdateLinkWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink)).click();
                     By UpdateMessage = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-                    WebElement UpdateMessageWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
                     String UpdateActualREsult = browserQA.findElement(UpdateMessage).getText();
                     String UpdateExcprctedResult = "تم تعديل البند الداخلي بنجاح.";
-
-
                     if (UpdateActualREsult.equals(UpdateExcprctedResult)) {
-
                         System.out.println("تم تعديل البند الداخلي بنجاح.");
-                    }
-
-                    if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
-
+                    } else if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
                         Assert.fail();
-
                     }
-
-
                 } else {
-
                     By EditLinkLoactor = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnEdit");
-
-                    WebElement EditLinkLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor));
-                    EditLinkLoactorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLoactor)).click();
                     By UpdateLink = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl02_lbtnUpdate");
-                    WebElement UpdateLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink));
-                    UpdateLinkWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateLink)).click();
                     By UpdateMessage = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-                    WebElement UpdateMessageWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpdateMessage));
                     String UpdateActualREsult = browserQA.findElement(UpdateMessage).getText();
                     String UpdateExcprctedResult = "تم تعديل البند الداخلي بنجاح.";
-
-
                     if (UpdateActualREsult.equals(UpdateExcprctedResult)) {
-
                         System.out.println("تم تعديل البند الداخلي بنجاح.");
-                    }
-
-                    if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
+                    } else if (!UpdateActualREsult.equals(UpdateExcprctedResult)) {
 
                         Assert.fail();
 
