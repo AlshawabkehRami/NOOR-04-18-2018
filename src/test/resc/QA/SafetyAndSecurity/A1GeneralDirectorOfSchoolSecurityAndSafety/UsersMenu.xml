@@ -4,12 +4,7 @@
   ~ Created By Rami AlShawabkeh  4/5/18 3:53 PM
   -->
 
-<!--
-  ~ Created By Rami AlShawabkeh  4/5/18 2:42 PM
-  -->
-
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
 
 <suite name="مسؤول الامن والسلامة قي المدرسة">
 
@@ -25,7 +20,9 @@
                 <methods>
                     <include name="loginAndSwitchPrfileUsers"/>
                     <include name="addGeneralDirectorOfSchoolSecurityAndSafetyOfficer"/>
+<!--
                     <include name="addSchoolSecurityAndSafetyOfficer"/>
+-->
                 </methods>
             </class>
             <class name="NoorProject.Other.NoorLogOut"/>
