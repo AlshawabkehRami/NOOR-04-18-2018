@@ -20,9 +20,7 @@
                 <methods>
                     <include name="loginAndSwitchPrfileUsers"/>
                     <include name="addGeneralDirectorOfSchoolSecurityAndSafetyOfficer"/>
-<!--
                     <include name="addSchoolSecurityAndSafetyOfficer"/>
--->
                 </methods>
             </class>
             <class name="NoorProject.Other.NoorLogOut"/>
