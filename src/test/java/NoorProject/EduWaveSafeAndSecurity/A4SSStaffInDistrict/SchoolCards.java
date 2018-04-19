@@ -27,11 +27,8 @@ public class SchoolCards {
 
     public void SwitchUser() {
 
-        WebElement SwitchProfileLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SwitchProfileLocator));
-        SwitchProfileLocatorWait.click();
-
-        WebElement UserNameLabelLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLabelLocator));
-        UserNameLabelLocatorWait.click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SwitchProfileLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLabelLocator)).click();
     }
 
 
@@ -63,26 +60,11 @@ public class SchoolCards {
         SchoolCards SwitchProfile = new SchoolCards();
         SwitchProfile.SwitchUser();
 
-
-        WebElement SchoolCardsMenuLOcatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator));
-        SchoolCardsMenuLOcatorWait.click();
-
-        WebElement ddlSupervisionCenterLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator));
-        ddlSupervisionCenterLocatorWait.click();
-
-        WebElement DDLSupervisionCenterSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator));
-        DDLSupervisionCenterSearchLocatorWait.sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
-
-        try {
-            WebElement BTNBSearchLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor));
-            BTNBSearchLoactorWait.click();
-        } catch (Exception e) {
-            WebElement BTNBSearchLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor));
-            BTNBSearchLoactorWait.click();
-        }
-
-        WebElement TDSchoolCardLOcatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator));
-        TDSchoolCardLOcatorWait.click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
 
 
         List ListRowsXpath = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
@@ -283,15 +265,14 @@ public class SchoolCards {
         WebElement UpDateLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UpDateLoactor));
         UpDateLoactorWait.click();
 
-        By EditMessageResult=By.id("ctl00_PlaceHolderMain_lblOperationResult");
+        By EditMessageResult = By.id("ctl00_PlaceHolderMain_lblOperationResult");
 
-        WebElement EditMessageResultWait=waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditMessageResult));
+        WebElement EditMessageResultWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditMessageResult));
 
-        String ActualResult=browserQA.findElement(EditMessageResult).getText();
-        String ExcpectedResult="تمت عملية التعديل بنجاح.";
+        String ActualResult = browserQA.findElement(EditMessageResult).getText();
+        String ExcpectedResult = "تمت عملية التعديل بنجاح.";
 
-        Assert.assertEquals(ActualResult,ExcpectedResult,"لم تتم عملية التعديل بنجاح");
-
+        Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم عملية التعديل بنجاح");
 
 
     }
@@ -320,7 +301,6 @@ public class SchoolCards {
         TDSchoolCardLOcatorWait.click();
 
 
-
         By DeleteLinkLocator = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl02_lbtnDelete");
         WebElement DeleteLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteLinkLocator));
         DeleteLinkLocatorWait.click();
@@ -329,14 +309,14 @@ public class SchoolCards {
         WebElement YesLinkConfrmationWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(YesLinkConfrmation));
         YesLinkConfrmationWait.click();
 
-        By DeleteMessageResult=By.id("ctl00_PlaceHolderMain_lblOperationResult");
+        By DeleteMessageResult = By.id("ctl00_PlaceHolderMain_lblOperationResult");
 
-        WebElement DeleteMessageResultWait=waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessageResult));
+        WebElement DeleteMessageResultWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessageResult));
 
-        String ActualResult=browserQA.findElement(DeleteMessageResult).getText();
-        String ExcpectedReslut="تمت عملية الحذف بنجاح.";
+        String ActualResult = browserQA.findElement(DeleteMessageResult).getText();
+        String ExcpectedReslut = "تمت عملية الحذف بنجاح.";
 
-        Assert.assertEquals(ActualResult,ExcpectedReslut,"لم تتم عملية الحذف بنجاح");
+        Assert.assertEquals(ActualResult , ExcpectedReslut , "لم تتم عملية الحذف بنجاح");
     }
 
 }
