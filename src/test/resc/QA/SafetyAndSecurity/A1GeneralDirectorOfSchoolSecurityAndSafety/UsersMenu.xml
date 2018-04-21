@@ -10,6 +10,25 @@
 
     <test name="اضافة المستخدمين">
 
+    <classes>
+        <class name="NoorProject.Other.NoorLogin">
+            <methods>
+                <include name="GeneralDirectorOfSchoolSecurityAndSafety"/>
+            </methods>
+        </class>
+        <class name="NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.Users.TheUsers">
+            <methods>
+                <include name="loginAndSwitchPrfileUsers"/>
+                <include name="addGeneralDirectorOfSchoolSecurityAndSafetyOfficer"/>
+            </methods>
+        </class>
+        <class name="NoorProject.Other.NoorLogOut"/>
+    </classes>
+
+</test>
+
+    <test name="اضافة n">
+
         <classes>
             <class name="NoorProject.Other.NoorLogin">
                 <methods>
@@ -19,7 +38,6 @@
             <class name="NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.Users.TheUsers">
                 <methods>
                     <include name="loginAndSwitchPrfileUsers"/>
-                    <include name="addGeneralDirectorOfSchoolSecurityAndSafetyOfficer"/>
                     <include name="addSchoolSecurityAndSafetyOfficer"/>
                 </methods>
             </class>

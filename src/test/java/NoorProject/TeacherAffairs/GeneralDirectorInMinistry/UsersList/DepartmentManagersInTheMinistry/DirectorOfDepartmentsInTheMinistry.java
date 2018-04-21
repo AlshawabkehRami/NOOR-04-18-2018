@@ -85,7 +85,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator)).sendKeys("1" + RandomNumberG);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("أسبانيا", Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("أسبانيا" , Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -112,7 +112,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDateLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDayLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlIdentificationPlaceLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("الشمال", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("الشمال" , Keys.ENTER);
         browserQA.findElement(ArabicFirstNameLocator).sendKeys("رامي");
         browserQA.findElement(ArabicSecondNameLocator).sendKeys("أحمد");
         browserQA.findElement(ArabicThirdNameLocator).sendKeys("علي");
@@ -122,7 +122,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(EnglishThirdNameLocator).sendKeys("Ali");
         browserQA.findElement(EnglishLastNameLocator).sendKeys("Alshawabkeh");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlGenderLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("بنين", Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("بنين" , Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -144,28 +144,29 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("أخرى", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("أخرى" , Keys.ENTER);
         browserQA.findElement(DDLBloodTypesLocator).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("AB+", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("AB+" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlResidenceTypeLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("بيت شعر", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("بيت شعر" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLResidenceOwnerShipLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("ملكية بالوقف/بالهبة", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlSocialSituationLOcator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("مطلق", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مطلق" , Keys.ENTER);
         browserQA.findElement(UserAuthenticationUCLocatr).clear();
         browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("Rami" + RandomNumberG);
         browserQA.findElement(UserAuthenticationUC_ibtnGoLocator).click();
+        Thread.sleep(1000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUClblUserNameVerifyLocator));
         String ValidationMeassageUN = browserQA.findElement(UserAuthenticationUClblUserNameVerifyLocator).getText();
         String ValidationMeassageUNString = "تم استخدام اسم الدخول من قبل، الرجاء إدخال اسم جديد.";
-        Assert.assertNotEquals(ValidationMeassageUN, ValidationMeassageUNString, "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
+        Assert.assertNotEquals(ValidationMeassageUN , ValidationMeassageUNString , "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
         browserQA.findElement(PasswordLocator).click();
         browserQA.findElement(PasswordLocator).sendKeys("1234");
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("الرياض", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("الرياض" , Keys.ENTER);
         Thread.sleep(300);
         for (int i = 0; i < 3; i++) {
             try {
@@ -177,7 +178,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         }
         for (int i = 0; i < 3; i++) {
             try {
-                browserQA.findElement(DDLSearchOption).sendKeys("محافظة الرياض 1", Keys.ENTER);
+                browserQA.findElement(DDLSearchOption).sendKeys("محافظة الرياض 1" , Keys.ENTER);
                 break;
             } catch (Exception e) {
                 Thread.sleep(100);
@@ -191,7 +192,7 @@ public class DirectorOfDepartmentsInTheMinistry {
                 Thread.sleep(100);
             }
         }
-        browserQA.findElement(DDLSearchOption).sendKeys("مركز الرياض 1", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مركز الرياض 1" , Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
@@ -210,10 +211,10 @@ public class DirectorOfDepartmentsInTheMinistry {
         By DDLCurrentWorkLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlCurrentWork-container");
         Thread.sleep(1000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlJobTitleLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
         Thread.sleep(1000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLCurrentWorkLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة", Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
         By CBTeacherDepartmentLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_cblTeacherDepartment_0");
         if (browserQA.findElements(CBTeacherDepartmentLocator).size() > 0) {
             browserQA.findElement(CBTeacherDepartmentLocator).click();
