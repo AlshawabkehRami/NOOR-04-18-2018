@@ -2,6 +2,7 @@ package NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndS
 
 import NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.Forms.Forms.SafetyForms;
 import NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.Forms.SectionsForm.SectionsForms;
+import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -337,23 +338,30 @@ public class ExternalItems {
         }
 
 
+        for (int i = 0; i < 3; i++) {
+            try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
-
+break;
+            }
+            catch (Exception e){
+                Thread.sleep(100);
+            }
+        }
         List SectionTableListDelet = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int TableSizeForSections = SectionTableListDelet.size();
         if (TableSizeForSections <= 1) {
             By SectionDescLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl03_tbAddFormSectionDesc");
 
-                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescLocator)).sendKeys("Test");
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescLocator)).sendKeys("Test");
 
             By AddLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl03_lbtnAddFormSectionDesc");
 
-                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator)).click();
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator)).click();
 
             By ExternalLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnItems");
 
 
-                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalLinkLocator)).click();
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalLinkLocator)).click();
 
             By ExternalDescLocator = By.id("ctl00_PlaceHolderMain_gvItems_ctl03_tbAddFormItemDesc");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalDescLocator)).sendKeys("Test");
@@ -424,7 +432,7 @@ public class ExternalItems {
     //مدير عام الامن والسلامة حذف البنود الخارجية
 
 
-    public void deleteExI() throws InterruptedException, IOException {
+    public void deleteExI() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
