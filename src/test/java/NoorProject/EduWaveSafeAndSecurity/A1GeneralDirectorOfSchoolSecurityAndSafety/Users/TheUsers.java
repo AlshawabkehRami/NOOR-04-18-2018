@@ -114,7 +114,7 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDateLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDayLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceSearchLocator)).sendKeys("الشمال" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceSearchLocator)).sendKeys("الشمال", Keys.ENTER);
         browserQA.findElement(ArabicFirstNameLocator).sendKeys("رامي");
         browserQA.findElement(ArabicSecondNameLocator).sendKeys("أحمد");
         browserQA.findElement(ArabicThirdNameLocator).sendKeys("علي");
@@ -126,7 +126,7 @@ public class TheUsers {
         By GebderDDLLocator = By.id("select2-ctl00_PlaceHolderMain_oUserAuthenticationUC_ddlGender-container");
         By GebderDDLLSearchocator = By.xpath("/html/body/span/span/span[1]/input");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين", Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -148,28 +148,28 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
-        browserQA.findElement(DDlReligionSearchLocator).sendKeys("أخرى" , Keys.ENTER);
+        browserQA.findElement(DDlReligionSearchLocator).sendKeys("أخرى", Keys.ENTER);
         browserQA.findElement(DDLBloodTypesLocator).click();
-        browserQA.findElement(DDLBloodTypesSearchLocator).sendKeys("AB+" , Keys.ENTER);
+        browserQA.findElement(DDLBloodTypesSearchLocator).sendKeys("AB+", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlResidenceTypeLocator)).click();
-        browserQA.findElement(DDlResidenceTypeSearchLocator).sendKeys("بيت شعر" , Keys.ENTER);
+        browserQA.findElement(DDlResidenceTypeSearchLocator).sendKeys("بيت شعر", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLResidenceOwnerShipLocator)).click();
-        browserQA.findElement(DDLResidenceOwnerShipSearchLocator).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
+        browserQA.findElement(DDLResidenceOwnerShipSearchLocator).sendKeys("ملكية بالوقف/بالهبة", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlSocialSituationLOcator)).click();
-        browserQA.findElement(DDlSocialSituationSerachLOcator).sendKeys("مطلق" , Keys.ENTER);
+        browserQA.findElement(DDlSocialSituationSerachLOcator).sendKeys("مطلق", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUCLocatr)).clear();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUCLocatr)).sendKeys("Rami" + RandomNumber);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUC_ibtnGoLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUClblUserNameVerifyLocator));
         String ValidationMeassageUN = browserQA.findElement(UserAuthenticationUClblUserNameVerifyLocator).getText();
         String ValidationMeassageUNString = "تم استخدام اسم الدخول من قبل، الرجاء إدخال اسم جديد.";
-        Assert.assertNotEquals(ValidationMeassageUN , ValidationMeassageUNString , "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
+        Assert.assertNotEquals(ValidationMeassageUN, ValidationMeassageUNString, "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
         browserQA.findElement(PasswordLocator).click();
         browserQA.findElement(PasswordLocator).sendKeys("1234");
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض" , Keys.ENTER);
+        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlCityLocator)).click();
@@ -178,7 +178,7 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1" , Keys.ENTER);
+        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlRegionLOcator)).click();
@@ -187,7 +187,7 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1" , Keys.ENTER);
+        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1", Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
@@ -240,9 +240,9 @@ public class TheUsers {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMeassage));
             String ActualResult2 = browserQA.findElement(ValidationMeassage).getText();
             String ExpectedResult2 = "تمت عملية الحفظ بنجاح.";
-            Assert.assertEquals(ActualResult2 , ExpectedResult2 , "يوجد مشكلة");
+            Assert.assertEquals(ActualResult2, ExpectedResult2, "يوجد مشكلة");
         } else {
-            Assert.assertEquals(ActualResult , Excpectesresult , "لم تتم عملية اضافة المستخدم بنجاح ");
+            Assert.assertEquals(ActualResult, Excpectesresult, "لم تتم عملية اضافة المستخدم بنجاح ");
         }
     }
 
@@ -260,7 +260,7 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator)).sendKeys("1" + RandomNumber);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalitySearchLocator)).sendKeys("أسبانيا" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalitySearchLocator)).sendKeys("أسبانيا", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(PassportNumberLocator)).sendKeys("2" + RandomNumber);
@@ -281,7 +281,7 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDateLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDayLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceSearchLocator)).sendKeys("الشمال" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLIdentificationPlaceSearchLocator)).sendKeys("الشمال", Keys.ENTER);
         browserQA.findElement(ArabicFirstNameLocator).sendKeys("رامي");
         browserQA.findElement(ArabicSecondNameLocator).sendKeys("أحمد");
         browserQA.findElement(ArabicThirdNameLocator).sendKeys("علي");
@@ -293,7 +293,7 @@ public class TheUsers {
         By GebderDDLLocator = By.id("select2-ctl00_PlaceHolderMain_oUserAuthenticationUC_ddlGender-container");
         By GebderDDLLSearchocator = By.xpath("/html/body/span/span/span[1]/input");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
@@ -302,19 +302,26 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
-        browserQA.findElement(DDlReligionSearchLocator).sendKeys("أخرى" , Keys.ENTER);
+        browserQA.findElement(DDlReligionSearchLocator).sendKeys("أخرى", Keys.ENTER);
         browserQA.findElement(DDLBloodTypesLocator).click();
-        browserQA.findElement(DDLBloodTypesSearchLocator).sendKeys("AB+" , Keys.ENTER);
+        browserQA.findElement(DDLBloodTypesSearchLocator).sendKeys("AB+", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlResidenceTypeLocator)).click();
-        browserQA.findElement(DDlResidenceTypeSearchLocator).sendKeys("بيت شعر" , Keys.ENTER);
+        browserQA.findElement(DDlResidenceTypeSearchLocator).sendKeys("بيت شعر", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLResidenceOwnerShipLocator)).click();
-        browserQA.findElement(DDLResidenceOwnerShipSearchLocator).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
+        browserQA.findElement(DDLResidenceOwnerShipSearchLocator).sendKeys("ملكية بالوقف/بالهبة", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlSocialSituationLOcator)).click();
-        browserQA.findElement(DDlSocialSituationSerachLOcator).sendKeys("مطلق" , Keys.ENTER);
+        browserQA.findElement(DDlSocialSituationSerachLOcator).sendKeys("مطلق", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUCLocatr)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUCLocatr)).clear();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUCLocatr)).sendKeys("Rami" + RandomNumber);
@@ -322,13 +329,13 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserAuthenticationUClblUserNameVerifyLocator));
         String ValidationMeassageUN = browserQA.findElement(UserAuthenticationUClblUserNameVerifyLocator).getText();
         String ValidationMeassageUNString = "تم استخدام اسم الدخول من قبل، الرجاء إدخال اسم جديد.";
-        Assert.assertNotEquals(ValidationMeassageUN , ValidationMeassageUNString , "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
+        Assert.assertNotEquals(ValidationMeassageUN, ValidationMeassageUNString, "الرجاء ادخال اسم مستخدم غير مستخدم من قبل  ");
         browserQA.findElement(PasswordLocator).click();
         browserQA.findElement(PasswordLocator).sendKeys("1234");
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض" , Keys.ENTER);
+        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlCityLocator)).click();
@@ -337,7 +344,7 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1" , Keys.ENTER);
+        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1", Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -347,7 +354,7 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1" , Keys.ENTER);
+        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1", Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
@@ -391,9 +398,9 @@ public class TheUsers {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMeassage));
             String ActualResult2 = browserQA.findElement(ValidationMeassage).getText();
             String ExpectedResult2 = "تمت عملية الحفظ بنجاح.";
-            Assert.assertEquals(ActualResult2 , ExpectedResult2 , "يوجد مشكلة");
+            Assert.assertEquals(ActualResult2, ExpectedResult2, "يوجد مشكلة");
         } else {
-            Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم عملية اضافة المستخدم بنجاح ");
+            Assert.assertEquals(ActualResult, ExcpectedResult, "لم تتم عملية اضافة المستخدم بنجاح ");
         }
     }
 }
