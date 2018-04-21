@@ -145,6 +145,7 @@ public class AllReports {
             }
         }
         By ReportTitleLoactor = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/table/tbody/tr[10]/td[2]/table/tbody/tr/td/div");
+        Thread.sleep(200);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLoactor));
         String ActualResult = browserQA.findElement(ReportTitleLoactor).getText();
         String ExpectedResult = "بيانات المباني";

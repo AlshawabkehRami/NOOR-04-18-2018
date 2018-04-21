@@ -223,6 +223,8 @@ public class TheUsers {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
             browserQA.findElement(By.id("ctl00_PlaceHolderMain_ibtnSave")).click();
             By ValidationMeassage = By.id("ctl00_PlaceHolderMain_lblResult");
+
+            Thread.sleep(200);
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMeassage));
             String ActualResult2 = browserQA.findElement(ValidationMeassage).getText();
             String ExpectedResult2 = "تمت عملية الحفظ بنجاح.";
