@@ -54,10 +54,10 @@ public class NoorLogin {
 //مدير عام شؤون المعلمين بالوزارة
     public void DirectorGeneralofTeachersAffairsintheMinistry() {
 
-        FirefoxDriverManager.getInstance().setup();
-        browserQA = new FirefoxDriver();
-    /*    ChromeDriverManager.getInstance().setup();
-        browserQA = new ChromeDriver();*/
+       /* FirefoxDriverManager.getInstance().setup();
+        browserQA = new FirefoxDriver();*/
+        ChromeDriverManager.getInstance().setup();
+        browserQA = new ChromeDriver();
         waitQA = new WebDriverWait(browserQA , 10);
         browserQA.navigate().to(URLQA);
         browserQA.manage().timeouts().pageLoadTimeout(10 , TimeUnit.SECONDS);

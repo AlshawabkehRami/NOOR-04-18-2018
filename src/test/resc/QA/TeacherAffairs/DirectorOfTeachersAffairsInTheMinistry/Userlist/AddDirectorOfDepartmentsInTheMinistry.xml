@@ -13,10 +13,10 @@
                     <include name="DirectorGeneralofTeachersAffairsintheMinistry"/>
                 </methods>
             </class>
-            <class name="NoorProject.TeacherAffairs.GeneralDirectorInMinistry.SchoolsAndDepartments.Departments.Department"/>
             <class name="NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry.DirectorOfDepartmentsInTheMinistry">
                 <methods>
                     <include name="AddDirectorOfDepartmentsInTheMinistry"/>
+                    <include name="UserId"/>
                     <include name="AddedPart2"/>
                 </methods>
             </class>
