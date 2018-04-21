@@ -6,7 +6,6 @@ package NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.Departmen
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,14 +23,13 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By UserIdFieldLocator = By.id("ctl00_PlaceHolderMain_tbIdentification");
     private By IbtnCheckIdentificationIDLocator = By.id("ctl00_PlaceHolderMain_ibtnCheckIdentificationID0");
     private By DDlNationalityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlNationality-container");
-    private By DDlNationalitySearchLocator = By.xpath("/html/body/span/span/span[1]/input");
+    private By DDLSearchOption = By.xpath("/html/body/span/span/span[1]/input");
     private By PassportNumberLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbPassportNumber");
     private By CLRIdentificationDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrIdentificationDate_ibtnOpenCalendar");
     private By CLRIdentificationDayLocator = By.xpath("/html/body/div/table/tbody/tr[3]/td[3]");
     private By CLRResidenceDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrResidenceDate_ibtnOpenCalendar");
     private By CLRResidenceDayLocator = By.xpath("/html/body/div/table/tbody/tr[1]/td[7]");
     private By DdlIdentificationPlaceLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlIdentificationPlace-container");
-    private By DdlIdentificationPlaceSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By ArabicFirstNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicFirstName");
     private By ArabicSecondNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicSecondName");
     private By ArabicThirdNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicThirdName");
@@ -41,32 +39,23 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By EnglishThirdNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbEnglishThirdName");
     private By EnglishLastNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbEnglishLastName");
     private By DdlGenderLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlGender-container");
-    private By DdlGenderSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By BirthDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrBirthDate_ibtnOpenCalendar");
     private By BirthDateLocatorDate = By.xpath("/html/body/div/table/tbody/tr[3]/td[3]");
     private By ArabicBirthPlaceLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicBirthPlace");
     private By EnglishBirthPlaceLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbEnglishBirthPlace");
     private By DDlReligionLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlReligion-container");
-    private By DDlReligionSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDLBloodTypesLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlBloodTypes-container");
-    private By DDLBloodTypesSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDlResidenceTypeLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlResidenceType-container");
-    private By DDlResidenceTypeSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDLResidenceOwnerShipLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlResidenceOwnerShip-container");
-    private By DDLResidenceOwnerShipSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDlSocialSituationLOcator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlSocialSituation-container");
-    private By DDlSocialSituationSerachLOcator = By.xpath("/html/body/span/span/span[1]/input");
     private By UserAuthenticationUCLocatr = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbUserName");
     private By UserAuthenticationUC_ibtnGoLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ibtnGo");
     private By UserAuthenticationUClblUserNameVerifyLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_lblUserNameVerify");
     private By PasswordLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbPassword");
     private By ConfirmPasswordLoactor = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbConfirmPassword");
     private By DDLManagmentRegionLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlManagmentRegion-container");
-    private By DDLManagmentRegionSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDlCityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlCity-container");
-    private By DDlCitySearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By DDlRegionLOcator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlRegion-container");
-    private By DDlRegionSearchLOcator = By.xpath("/html/body/span/span/span[1]/input");
     private By MainStreetLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbMainStreet");
     private By SubStreetLOcator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbSubStreet");
     private By HouseNoLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbHouseNo");
@@ -96,7 +85,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator)).sendKeys("1" + RandomNumberG);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalitySearchLocator)).sendKeys("أسبانيا" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("أسبانيا" , Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -123,7 +112,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDateLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDayLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlIdentificationPlaceLocator)).click();
-        browserQA.findElement(DdlIdentificationPlaceSearchLocator).sendKeys("الشمال" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("الشمال" , Keys.ENTER);
         browserQA.findElement(ArabicFirstNameLocator).sendKeys("رامي");
         browserQA.findElement(ArabicSecondNameLocator).sendKeys("أحمد");
         browserQA.findElement(ArabicThirdNameLocator).sendKeys("علي");
@@ -133,7 +122,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(EnglishThirdNameLocator).sendKeys("Ali");
         browserQA.findElement(EnglishLastNameLocator).sendKeys("Alshawabkeh");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlGenderLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlGenderSearchLocator)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("بنين" , Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -155,15 +144,15 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
-        browserQA.findElement(DDlReligionSearchLocator).sendKeys("أخرى" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("أخرى" , Keys.ENTER);
         browserQA.findElement(DDLBloodTypesLocator).click();
-        browserQA.findElement(DDLBloodTypesSearchLocator).sendKeys("AB+" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("AB+" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlResidenceTypeLocator)).click();
-        browserQA.findElement(DDlResidenceTypeSearchLocator).sendKeys("بيت شعر" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("بيت شعر" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLResidenceOwnerShipLocator)).click();
-        browserQA.findElement(DDLResidenceOwnerShipSearchLocator).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlSocialSituationLOcator)).click();
-        browserQA.findElement(DDlSocialSituationSerachLOcator).sendKeys("مطلق" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مطلق" , Keys.ENTER);
         browserQA.findElement(UserAuthenticationUCLocatr).clear();
         browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("Rami" + RandomNumberG);
         browserQA.findElement(UserAuthenticationUC_ibtnGoLocator).click();
@@ -176,7 +165,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("الرياض" , Keys.ENTER);
         Thread.sleep(300);
         for (int i = 0; i < 3; i++) {
             try {
@@ -188,7 +177,7 @@ public class DirectorOfDepartmentsInTheMinistry {
         }
         for (int i = 0; i < 3; i++) {
             try {
-                browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1" , Keys.ENTER);
+                browserQA.findElement(DDLSearchOption).sendKeys("محافظة الرياض 1" , Keys.ENTER);
                 break;
             } catch (Exception e) {
                 Thread.sleep(100);
@@ -202,7 +191,7 @@ public class DirectorOfDepartmentsInTheMinistry {
                 Thread.sleep(100);
             }
         }
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مركز الرياض 1" , Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
@@ -218,13 +207,11 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(FaxNumber).sendKeys("7" + RandomNumberG);
         browserQA.findElement(btnSaveLocator).click();
         By DDlJobTitleLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlJobTitle-container");
-        By DDlJobTitleSerachLocator = By.xpath("/html/body/span/span/span[1]/input");
         By DDLCurrentWorkLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlCurrentWork-container");
-        By DDLCurrentWorkSerachLocator = By.xpath("/html/body/span/span/span[1]/input");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlJobTitleLocator)).click();
-        browserQA.findElement(DDlJobTitleSerachLocator).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLCurrentWorkLocator)).click();
-        browserQA.findElement(DDLCurrentWorkSerachLocator).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
+        browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
         By CBTeacherDepartmentLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_cblTeacherDepartment_0");
         if (browserQA.findElements(CBTeacherDepartmentLocator).size() > 0) {
             browserQA.findElement(CBTeacherDepartmentLocator).click();

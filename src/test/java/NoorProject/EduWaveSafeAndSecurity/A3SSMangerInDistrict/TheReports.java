@@ -19,7 +19,6 @@ import static NoorProject.Other.NoorLogin.browserQA;
 import static NoorProject.Other.NoorLogin.waitQA;
 
 public class TheReports {
-
     private By SwitchProfileLocator = By.id("ctl00_oHeader_divSwitchUser");
     private By UserNameLabelLocator = By.partialLinkText("مدير الأمن والسلامة في إدارة التعليم");
     private By ReportsMainMenuLocator = By.id("divMenuItem_304");
