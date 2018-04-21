@@ -40,161 +40,76 @@ public class ExternalItems {
     @Test
 
     public void switchProfile() {
-
-        browserQA.manage().window().maximize();
-        browserQA.manage().timeouts().pageLoadTimeout(5 , TimeUnit.SECONDS);
-
-        WebElement SwitchProfileLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SwitchProfileLocator));
-        SwitchProfileLocatorWait.click();
-
-        WebElement UserLabelLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLabelLocator));
-        UserLabelLocatorWait.click();
-
-
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SwitchProfileLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLabelLocator)).click();
     }
-
 
     //موظف الامن والسلامة/ أضافة البنود الخارجية
     @Test
     public void addExI() throws InterruptedException {
-
-        browserQA.manage().window().maximize();
-        browserQA.manage().timeouts().pageLoadTimeout(5 , TimeUnit.SECONDS);
-
         SafetyForms AddForm = new SafetyForms();
         AddForm.addSafetyForms();
-
-
-        WebElement FormMainMenuLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor));
-        FormMainMenuLoactorWait.click();
-
-        WebElement FormStatusLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator));
-        FormStatusLocatorWait.click();
-
-        WebElement FormStatusSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator));
-        FormStatusSearchLocatorWait.sendKeys("غير منشور" , Keys.ENTER);
-
-        Thread.sleep(1000);
-        WebElement SerachButtonLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator));
-        SerachButtonLocatorWait.click();
-
-        WebElement SectionsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator));
-        SectionsLinkLocatorWait.click();
-
-
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
         List SectionTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
-
         int TableSectionSizeForCheck = SectionTableList.size();
-
         if (TableSectionSizeForCheck <= 1) {
-
             SectionsForms AddSection = new SectionsForms();
             AddSection.addSections();
             List SectionsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
             int SectionsTableListSize = SectionsTableList.size();
-
-
-            System.out.println("Rami" + SectionsTableListSize);
-
             if (SectionsTableListSize >= 21) {
                 By ExternalItemsLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl20_lbtnItems");
-                WebElement ExternalItemsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator));
-                ExternalItemsLinkLocatorWait.click();
-
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator)).click();
                 List ExternalItemsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
-
                 int TableSize = ExternalItemsTableList.size();
-
-                System.out.println("TableSize::" + TableSize);
-
                 if (TableSize <= 1) {
                     int TableSizeAdd = ExternalItemsTableList.size() + 2;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
-
                     By AddDescLink1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1));
-                    AddLinkLocatorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1)).click();
                     By MeesageResultLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
                     String ActualResult = browserQA.findElement(MeesageResultLocator).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
-
                 if (TableSize >= 2 && TableSize < 22) {
-
                     int TableSizeAdd = ExternalItemsTableList.size() + 1;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator2 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
                     String ActualResult = browserQA.findElement(MeesageResultLocator2).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
 
                 }
                 if (TableSize >= 22) {
                     int TableSizeAdd = ExternalItemsTableList.size();
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator3 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
                     String ActualResult = browserQA.findElement(MeesageResultLocator3).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
                 }
 
@@ -202,316 +117,158 @@ public class ExternalItems {
             } else {
 
                 By ExternalItemsLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnItems");
-                WebElement ExternalItemsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator));
-                ExternalItemsLinkLocatorWait.click();
-
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator)).click();
                 List ExternalItemsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
-
                 int TableSize = ExternalItemsTableList.size();
-
-                System.out.println("TableSize::" + TableSize);
-
                 if (TableSize <= 1) {
                     int TableSizeAdd = ExternalItemsTableList.size() + 2;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
-
                     By AddDescLink1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1));
-                    AddLinkLocatorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1)).click();
                     By MeesageResultLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
                     String ActualResult = browserQA.findElement(MeesageResultLocator).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
-
                 if (TableSize >= 2 && TableSize < 22) {
-
                     int TableSizeAdd = ExternalItemsTableList.size() + 1;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator2 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
                     String ActualResult = browserQA.findElement(MeesageResultLocator2).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
                 if (TableSize >= 22) {
                     int TableSizeAdd = ExternalItemsTableList.size();
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator3 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
                     String ActualResult = browserQA.findElement(MeesageResultLocator3).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
                 }
             }
         } else {
             List SectionsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
             int SectionsTableListSize = SectionsTableList.size();
-
-
-            System.out.println("Rami" + SectionsTableListSize);
-
             if (SectionsTableListSize >= 21) {
                 By ExternalItemsLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl20_lbtnItems");
-                WebElement ExternalItemsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator));
-                ExternalItemsLinkLocatorWait.click();
-
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator)).click();
                 List ExternalItemsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
-
                 int TableSize = ExternalItemsTableList.size();
-
-                System.out.println("TableSize::" + TableSize);
-
                 if (TableSize <= 1) {
                     int TableSizeAdd = ExternalItemsTableList.size() + 2;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
-
                     By AddDescLink1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1));
-                    AddLinkLocatorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1)).click();
                     By MeesageResultLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
                     String ActualResult = browserQA.findElement(MeesageResultLocator).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
 
                 if (TableSize >= 2 && TableSize < 22) {
-
                     int TableSizeAdd = ExternalItemsTableList.size() + 1;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator2 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
                     String ActualResult = browserQA.findElement(MeesageResultLocator2).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
                 if (TableSize >= 22) {
                     int TableSizeAdd = ExternalItemsTableList.size();
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator3 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
                     String ActualResult = browserQA.findElement(MeesageResultLocator3).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
                 }
-
 
             } else {
-
                 By ExternalItemsLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnItems");
-                WebElement ExternalItemsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator));
-                ExternalItemsLinkLocatorWait.click();
-
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ExternalItemsLinkLocator)).click();
                 List ExternalItemsTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
-
                 int TableSize = ExternalItemsTableList.size();
-
-                System.out.println("TableSize::" + TableSize);
-
                 if (TableSize <= 1) {
                     int TableSizeAdd = ExternalItemsTableList.size() + 2;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
-
                     By AddDescLink1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink1)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator1 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1));
-                    AddLinkLocatorWait.click();
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator1)).click();
                     By MeesageResultLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator));
                     String ActualResult = browserQA.findElement(MeesageResultLocator).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
-
                 if (TableSize >= 2 && TableSize < 22) {
-
                     int TableSizeAdd = ExternalItemsTableList.size() + 1;
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator2 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator2));
                     String ActualResult = browserQA.findElement(MeesageResultLocator2).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
-
-
                 }
                 if (TableSize >= 22) {
                     int TableSizeAdd = ExternalItemsTableList.size();
                     String TableSizeAddFormat = String.format("%02d" , TableSizeAdd);
-                    System.out.println("TableSizeAdd::" + TableSizeAdd);
-                    System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
-
                     By AddDescLink2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_tbAddFormItemDesc");
                     Random Rand = new Random();
                     int RandomNumber = Rand.nextInt(1000000);
-
-                    WebElement AddDescLinkWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2));
-                    AddDescLinkWait.sendKeys("Rami" + RandomNumber);
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddDescLink2)).sendKeys("Rami" + RandomNumber);
                     By AddLinkLocator2 = By.id("ctl00_PlaceHolderMain_gvItems_ctl" + TableSizeAddFormat + "_lbtnAddFormItemDesc");
-
-                    WebElement AddLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2));
-                    AddLinkLocatorWait.click();
-
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator2)).click();
                     By MeesageResultLocator3 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
-
-                    WebElement MeesageResultLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
-
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(MeesageResultLocator3));
                     String ActualResult = browserQA.findElement(MeesageResultLocator3).getText();
                     String ExcpectedResult = "تم إضافة البند الخارجي بنجاح.";
-
                     Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم إضافة البند  الخارجي بنجاح.");
                 }
             }
@@ -721,7 +478,7 @@ public class ExternalItems {
     //مدير عام الامن والسلامة حذف البنود الخارجية
 
 
-    public void deleteExI() throws InterruptedException, IOException {
+    public void deleteExI() throws InterruptedException {
 
         browserQA.manage().window().maximize();
         browserQA.manage().timeouts().pageLoadTimeout(5 , TimeUnit.SECONDS);
