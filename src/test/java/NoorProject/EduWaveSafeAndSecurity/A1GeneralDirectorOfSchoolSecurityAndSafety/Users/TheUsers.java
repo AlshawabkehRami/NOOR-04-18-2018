@@ -34,7 +34,6 @@ public class TheUsers {
     }
 
     private By UsersTypeMenuLocator = By.id("divMenuItem_4720");
-    private By MyInputLocator = By.id("myInput");
     private By UserLinkLocator1 = By.linkText("موظف صلاحيات مدير عام الأمن والسلامة المدرسية");
     private By AddedNewUserLinkLocator = By.id("ctl00_PlaceHolderMain_lbtnAddManagementUser");
     private By UserIdFieldLocator = By.id("ctl00_PlaceHolderMain_tbIdentification");
@@ -128,23 +127,10 @@ public class TheUsers {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين", Keys.ENTER);
 
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
+        Thread.sleep(1000);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+        Thread.sleep(1000);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
@@ -294,22 +280,9 @@ public class TheUsers {
         By GebderDDLLSearchocator = By.xpath("/html/body/span/span/span[1]/input");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين", Keys.ENTER);
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
+        Thread.sleep(1000);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
@@ -354,7 +327,15 @@ public class TheUsers {
                 Thread.sleep(200);
             }
         }
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1", Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");

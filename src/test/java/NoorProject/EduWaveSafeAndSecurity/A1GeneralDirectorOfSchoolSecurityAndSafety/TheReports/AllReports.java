@@ -323,7 +323,15 @@ public class AllReports {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DistrictSearchLocatorSDWES)).sendKeys("الحد الغربي", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DistrictSearchLocatorSDWES)).sendKeys("الحد الغربي", Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(OfficeLocatorSDWES)).click();
@@ -359,9 +367,15 @@ public class AllReports {
     //
 //بيانات المستخدمين بالمدارس
     @Test
-    public void userDataInTheSchools() {
-
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator)).click();
+    public void userDataInTheSchools() throws InterruptedException {
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserDataInTheSchoolsLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLGenderLocatorUDIS)).click();
@@ -415,8 +429,14 @@ public class AllReports {
 
         browserQA.findElement(DDLSupervisionCenteSearchLocatorSWOSB).sendKeys("عمان", Keys.ENTER);
 
-
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorSWOSB)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorSWOSB)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         By ReportTitleInsidLoactor = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleInsidLoactor));
         String ActualResult = browserQA.findElement(ReportTitleInsidLoactor).getText();
