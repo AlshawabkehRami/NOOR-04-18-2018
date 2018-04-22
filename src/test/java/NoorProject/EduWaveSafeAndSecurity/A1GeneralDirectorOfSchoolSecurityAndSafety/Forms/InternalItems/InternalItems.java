@@ -85,7 +85,14 @@ public class InternalItems {
             AddExternalItems.addExI();
         }
         By InternalItemsLocator = By.id("ctl00_PlaceHolderMain_gvItems_ctl02_lbtnInternalItems");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(InternalItemsLocator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(InternalItemsLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         List InternalItemsList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td/div/div/table[1]/tbody/tr/td[1]"));
         int InternalItemsListSize = InternalItemsList.size();
         if (InternalItemsListSize <= 1) {
