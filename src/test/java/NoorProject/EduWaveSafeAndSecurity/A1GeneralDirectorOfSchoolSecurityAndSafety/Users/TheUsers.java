@@ -375,6 +375,7 @@ public class TheUsers {
                 Thread.sleep(100);
             }
         }
+        Thread.sleep(100);
         String ActualResult = browserQA.findElement(ValidationMessageAfterAddTheUser).getText();
         String ExcpectedResult = "لا يمكن اضافة ملف لعدم وجود ملف له في شؤون المعلمين";
         if (ActualResult.equals(ExcpectedResult)) {

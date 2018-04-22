@@ -267,14 +267,22 @@ public class ReportsMenu {
     //
 //عدد الطلاب مع ملكية مبنى المدرسة
     @Test
-    public void numberOfStudentsWhoOwnTheSchoolBuilding() {
+    public void numberOfStudentsWhoOwnTheSchoolBuilding() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLinkReportLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("عدد الطلاب مع ملكية مبنى المدرسة");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocator9)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(Drop_down_list_Locator9)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
 
 
         By ReportTitle = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");

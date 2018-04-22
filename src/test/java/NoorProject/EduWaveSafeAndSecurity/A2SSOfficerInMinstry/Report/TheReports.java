@@ -170,7 +170,14 @@ public class TheReports {
             }
         }
         By NameofTheReportLocator = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[6]/td[3]/table/tbody/tr/td/div");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameofTheReportLocator));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameofTheReportLocator));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         String NameofTheReportString = browserQA.findElement(NameofTheReportLocator).getText();
         String ReportLabelString = "بيانات مسؤولي الامن والسلامة في المدارس";
         Assert.assertEquals(NameofTheReportString, ReportLabelString, "التقرير المطلوب غير موجود");

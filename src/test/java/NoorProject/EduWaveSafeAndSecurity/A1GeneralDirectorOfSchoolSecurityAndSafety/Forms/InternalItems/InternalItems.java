@@ -128,7 +128,14 @@ public class InternalItems {
                 }
             }
             By AddEvaluationWeightLocator2 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format + "_tbAddEvaluationWeight");
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeightLocator2)).sendKeys("10");
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeightLocator2)).sendKeys("10");
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             By AddLink2 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format + "_lbtnAddFormInternalItem");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLink2)).click();
             By AddValidationMessageLocator2 = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
