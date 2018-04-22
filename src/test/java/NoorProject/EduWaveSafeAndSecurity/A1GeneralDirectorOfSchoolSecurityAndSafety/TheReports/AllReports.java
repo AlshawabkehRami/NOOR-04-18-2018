@@ -57,7 +57,16 @@ public class AllReports {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorDSTC)).sendKeys("الحد الغربي", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorDSTC)).sendKeys("الحد الغربي", Keys.ENTER);
+                break;
+
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
 
         for (int i = 0; i < 3; i++) {
             try {

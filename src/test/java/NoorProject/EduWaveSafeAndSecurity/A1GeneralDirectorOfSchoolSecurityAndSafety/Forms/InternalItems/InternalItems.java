@@ -150,7 +150,15 @@ public class InternalItems {
             By InternalItemsDesc2 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format3 + "_tbAddFormInternalItemDesc");
             Random Rand = new Random();
             int RandomNumber = Rand.nextInt(1000000);
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(InternalItemsDesc2)).sendKeys("بند داخلي" + RandomNumber);
+
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(InternalItemsDesc2)).sendKeys("بند داخلي" + RandomNumber);
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             By AddEvaluationWeightLocator23 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format3 + "_tbAddEvaluationWeight");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddEvaluationWeightLocator23)).sendKeys("10");
             By AddLink23 = By.id("ctl00_PlaceHolderMain_gvInternalItems_ctl" + InternalItemsListSizeAdd1Format3 + "_lbtnAddFormInternalItem");
