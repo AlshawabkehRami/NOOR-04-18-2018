@@ -96,7 +96,14 @@ public class GeneralDirectorOfSchoolSecurityAndSafetyUser {
         int RandomNumber = Rand.nextInt(1000000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator)).sendKeys("1" + RandomNumber);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalitySearchLocator)).sendKeys("أسبانيا" , Keys.ENTER);

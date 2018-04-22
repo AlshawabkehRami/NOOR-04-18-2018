@@ -151,7 +151,7 @@ public class ReportsMenu {
     //
 //معلومات بطاقات المدارس
     @Test
-    public void assessmentRate()   {
+    public void assessmentRate() throws InterruptedException {
 
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator)).click();
@@ -161,7 +161,14 @@ public class ReportsMenu {
         By ddlSupervisionCenterLocator = By.id("select2-ctl00_PlaceHolderMain_ddlSupervisionCenter-container");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenterLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolLocator4)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolLocator4)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مدرسة سعيد بن المسيب التانوية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator));
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BackBTN1)).click();
