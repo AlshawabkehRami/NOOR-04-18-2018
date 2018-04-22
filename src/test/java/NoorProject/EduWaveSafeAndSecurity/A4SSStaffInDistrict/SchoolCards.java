@@ -39,7 +39,7 @@ public class SchoolCards {
     private By TDSchoolCardLOcator = By.id("ctl00_PlaceHolderMain_gvSchools_ctl02_tdSchoolCard");
 
     @Test
-    public void addSchoolCards()   {
+    public void addSchoolCards()     {
 
         browserQA.close();
         NoorLogin Login = new NoorLogin();
