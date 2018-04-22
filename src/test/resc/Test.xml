@@ -13,8 +13,12 @@
     <suite-files>
         <suite-file path="QA/SafetyAndSecurity/A1GeneralDirectorOfSchoolSecurityAndSafety/AllTestSuit.xml"/>
         <suite-file path="QA/SafetyAndSecurity/A2SSOfficerInMinstry/AllTestSuit.xml"/>
+<!--
         <suite-file path="QA/SafetyAndSecurity/A3SSMangerInDistrict/AllTestSuit.xml"/>
+-->
+<!--
         <suite-file path="QA/SafetyAndSecurity/A4SSStaffInDistrict/AllTestSuit.xml"/>
+-->
 
 
 

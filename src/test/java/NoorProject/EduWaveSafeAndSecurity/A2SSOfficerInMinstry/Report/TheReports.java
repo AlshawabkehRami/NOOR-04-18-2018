@@ -219,7 +219,14 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(Info_Schools_LocatorIS));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(Info_Schools_LocatorIS));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         String s = browserQA.findElement(Info_Schools_LocatorIS).getText();
         String Info_schools_2 = "بيانات المدرسة";
         Assert.assertEquals(s , Info_schools_2 , "البيانات غير صحيحة");

@@ -291,7 +291,15 @@ public class TheUsers {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
