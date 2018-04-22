@@ -290,7 +290,14 @@ public class SectionsForms {
                     Thread.sleep(100);
                 }
             }
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(YesConfrmationLocator)).click();
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(YesConfrmationLocator)).click();
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             By MessageLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(MessageLocator));
             String ActualResult = browserQA.findElement(MessageLocator).getText();
