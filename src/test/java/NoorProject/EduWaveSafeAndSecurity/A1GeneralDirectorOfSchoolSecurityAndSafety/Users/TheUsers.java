@@ -282,8 +282,15 @@ public class TheUsers {
         By GebderDDLLSearchocator = By.xpath("/html/body/span/span/span[1]/input");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GebderDDLLSearchocator)).sendKeys("بنين", Keys.ENTER);
-        Thread.sleep(1000);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");

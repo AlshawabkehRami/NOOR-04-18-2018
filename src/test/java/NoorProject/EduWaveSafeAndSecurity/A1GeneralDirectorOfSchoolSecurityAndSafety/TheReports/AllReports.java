@@ -278,6 +278,7 @@ public class AllReports {
                 Thread.sleep(200);
             }
         }
+        Thread.sleep(200);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLOfficeSearchLocatorSR)).sendKeys("مكتب الخالدية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
