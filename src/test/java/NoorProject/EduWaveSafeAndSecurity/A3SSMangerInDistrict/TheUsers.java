@@ -126,8 +126,23 @@ public class TheUsers {
         browserQA.findElement(EnglishSecondNameLocator).sendKeys("Ahmad");
         browserQA.findElement(EnglishThirdNameLocator).sendKeys("Ali");
         browserQA.findElement(EnglishLastNameLocator).sendKeys("Alshawabkeh");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();
@@ -284,8 +299,23 @@ public class TheUsers {
         browserQA.findElement(EnglishSecondNameLocator).sendKeys("Ahmad");
         browserQA.findElement(EnglishThirdNameLocator).sendKeys("Ali");
         browserQA.findElement(EnglishLastNameLocator).sendKeys("Alshawabkeh");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
         browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
         browserQA.findElement(DDlReligionLocator).click();

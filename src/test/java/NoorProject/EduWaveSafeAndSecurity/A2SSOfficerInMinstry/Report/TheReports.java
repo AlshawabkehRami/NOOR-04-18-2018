@@ -42,7 +42,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReprtNameLocatorBI)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderLocatorBI)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLocatorBI)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLocatorBI)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 2; i++) {
             try {
                 WebElement ddlDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictLocatorBI));
@@ -52,7 +52,7 @@ public class TheReports {
                 System.out.println(e.getMessage());
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictSearchLocatorBI)).sendKeys("الحد الغربي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictSearchLocatorBI)).sendKeys("الحد الغربي", Keys.ENTER);
         for (int i = 0; i < 2; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorBI)).click();
@@ -66,7 +66,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLoactor));
         String TitleForTheReport = browserQA.findElement(ReportTitleLoactor).getText();
         String Title = "بيانات المباني";
-        Assert.assertEquals(TitleForTheReport , Title , "التقرير المطلوب غير موجود");
+        Assert.assertEquals(TitleForTheReport, Title, "التقرير المطلوب غير موجود");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBackLoactorBI)).click();
     }
 
@@ -91,7 +91,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocatorSTC)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlLearningGenderLocatorSTC)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlLearningGenderSearchLocatorSTC)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlLearningGenderSearchLocatorSTC)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 WebElement ddlDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictLocatorSTC));
@@ -101,7 +101,7 @@ public class TheReports {
                 System.out.println(e.getMessage());
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSTC)).sendKeys("الحد الغربي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSTC)).sendKeys("الحد الغربي", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
 
             try {
@@ -112,7 +112,7 @@ public class TheReports {
             }
 
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlStudylevelSearchLocatorSTC)).sendKeys("الثانوية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlStudylevelSearchLocatorSTC)).sendKeys("الثانوية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolCategorizationLocatorSTC)).click();
@@ -121,7 +121,7 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolCategorizationSearchLoactorSTC)).sendKeys("حكومي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolCategorizationSearchLoactorSTC)).sendKeys("حكومي", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(btnSearchLocatorSTC)).click();
@@ -133,7 +133,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameOfTheReprtLoactorSTC));
         String NameOfTheReprtTilte = "توزيع الطلاب على الفصول تجميعي";
         String NameOfTheReprtLoactoTitle = browserQA.findElement(NameOfTheReprtLoactorSTC).getText();
-        Assert.assertEquals(NameOfTheReprtTilte , NameOfTheReprtLoactoTitle , "التقرير غير صحيح");
+        Assert.assertEquals(NameOfTheReprtTilte, NameOfTheReprtLoactoTitle, "التقرير غير صحيح");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(btnBackLocatorSTC)).click();
     }
 
@@ -150,7 +150,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocatorDSSOS)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderDDlLocatorDSSOS)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderDDlSearchLocatorDSSOS)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderDDlSearchLocatorDSSOS)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(btnSearchLocatorDSSOS)).click();
@@ -163,7 +163,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameofTheReportLocator));
         String NameofTheReportString = browserQA.findElement(NameofTheReportLocator).getText();
         String ReportLabelString = "بيانات مسؤولي الامن والسلامة في المدارس";
-        Assert.assertEquals(NameofTheReportString , ReportLabelString , "التقرير المطلوب غير موجود");
+        Assert.assertEquals(NameofTheReportString, ReportLabelString, "التقرير المطلوب غير موجود");
     }
 
     private By TheReportNameLoactorIS = By.linkText("بيانات المدرسة");
@@ -192,7 +192,7 @@ public class TheReports {
             }
         }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_sex_LocatorIS)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_male_LocatorIS)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_male_LocatorIS)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_managements_LocatorIS)).click();
@@ -201,7 +201,7 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_drop_down_managements_LocatorIS)).sendKeys("الحد الغربي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_drop_down_managements_LocatorIS)).sendKeys("الحد الغربي", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_LocatorIS)).click();
@@ -210,7 +210,7 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_Locator_txtIS)).sendKeys("مكتب الخالدية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(education_office_Locator_txtIS)).sendKeys("مكتب الخالدية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorIS)).click();
@@ -229,7 +229,7 @@ public class TheReports {
         }
         String s = browserQA.findElement(Info_Schools_LocatorIS).getText();
         String Info_schools_2 = "بيانات المدرسة";
-        Assert.assertEquals(s , Info_schools_2 , "البيانات غير صحيحة");
+        Assert.assertEquals(s, Info_schools_2, "البيانات غير صحيحة");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_back_LocatorIS)).click();
     }
 
@@ -266,7 +266,7 @@ public class TheReports {
         }
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlLearningGender_LocatorSDWES)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_filed_LocatorSDWES)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_filed_LocatorSDWES)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrict_LocatorSDWES)).click();
@@ -276,7 +276,7 @@ public class TheReports {
             }
         }
 
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_2_LocatorSDWES)).sendKeys("الحد الغربي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_2_LocatorSDWES)).sendKeys("الحد الغربي", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(office_education_LocatorSDWES)).click();
@@ -285,7 +285,7 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_3_LocatorSDWES)).sendKeys("الخالدية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_3_LocatorSDWES)).sendKeys("الخالدية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorSDWES)).click();
@@ -313,9 +313,16 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocatorIR)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderLocatorIR)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLoactorIR)).sendKeys("بنين" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlFormNameLoactorIR)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlFormNameSearchLoactorIR)).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLoactorIR)).sendKeys("بنين", Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlFormNameLoactorIR)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlFormNameSearchLoactorIR)).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(btnSearchLocatorIR)).click();
@@ -330,7 +337,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideLabelLocator));
         String ddd = browserQA.findElement(ReportInsideLabelLocator).getText();
         String ggg = "الأمن والسلامة-نسب الإدخال على مستوى الوزارة";
-        Assert.assertEquals(ddd , ggg , "التقرير غير موجود");
+        Assert.assertEquals(ddd, ggg, "التقرير غير موجود");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(btnBackLocatorIR)).click();
 
     }
@@ -352,7 +359,7 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocatorAR)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderLoactorAR)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLoactorAR)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLoactorAR)).sendKeys("بنين", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormNameLoactorAR)).click();
@@ -361,12 +368,12 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormNameSearchLoactorAR)).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormNameSearchLoactorAR)).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLoactorAR)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideNameLoactorAR));
         String ReportInsideName = browserQA.findElement(ReportInsideNameLoactorAR).getText();
         String ReportInsideNameString = "الأمن والسلامة-نسب التقييم على مستوى الوزارة";
-        Assert.assertEquals(ReportInsideName , ReportInsideNameString , "لتقرير المطلوب غير متوفر حاليا");
+        Assert.assertEquals(ReportInsideName, ReportInsideNameString, "لتقرير المطلوب غير متوفر حاليا");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnBackLoactorAR)).click();
     }
 
@@ -395,7 +402,7 @@ public class TheReports {
             }
         }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderLocatorSWO)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FemalelocatorSWO)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FemalelocatorSWO)).sendKeys("بنين", Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -406,7 +413,7 @@ public class TheReports {
             }
 
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSWO)).sendKeys("ادارة تعليم الحد الغربي(بنين)" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSWO)).sendKeys("ادارة تعليم الحد الغربي(بنين)", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenteLocatorSWO)).click();
@@ -415,13 +422,13 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenteSearchLocatorSWO)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenteSearchLocatorSWO)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLocatorSWO)).click();
         By ReportTitleInsidLoactor = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[7]/td[3]/table/tbody/tr/td/div/div/span");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleInsidLoactor));
         String ReportTitleInsidLoactorElement = browserQA.findElement(ReportTitleInsidLoactor).getText();
         String ReportTitleInsidString = " عدد الطلاب مع ملكية مبنى المدرسة";
-        Assert.assertEquals(ReportTitleInsidLoactorElement , ReportTitleInsidString , "لايمكن عرض التقرير المطلوب");
+        Assert.assertEquals(ReportTitleInsidLoactorElement, ReportTitleInsidString, "لايمكن عرض التقرير المطلوب");
 
     }
 
@@ -444,14 +451,14 @@ public class TheReports {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocatorUDS)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_sex_LocatorUDS)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_1_LocatorUDS)).sendKeys("بنين" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_1_LocatorUDS)).sendKeys("بنين", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_managementt_LocatorUDS)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_2_LocatorUDS)).sendKeys("الحد الغربي" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_2_LocatorUDS)).sendKeys("الحد الغربي", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_LocatorUDS)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(info_schools_LocatorUDS));
         String s = browserQA.findElement(info_schools_LocatorUDS).getText();
         String Info_schools_2 = "بيانات المستخدمين بالمدارس";
-        Assert.assertEquals(s , Info_schools_2 , "البيانات غير صحيحة");
+        Assert.assertEquals(s, Info_schools_2, "البيانات غير صحيحة");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_back_LocatorUDS)).click();
 
     }
