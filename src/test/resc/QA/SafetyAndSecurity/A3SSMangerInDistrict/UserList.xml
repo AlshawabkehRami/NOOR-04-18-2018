@@ -8,7 +8,6 @@
 
 
 <suite name="مدير الامن والسلامة باردارة التعليم">
-
     <test name="المستخدمون">
         <classes>
             <class name="NoorProject.Other.NoorLogin">
@@ -20,9 +19,23 @@
                 <methods>
                     <include name="LoginUserSwitch"/>
                     <include name="addUserAuthorityEmployee"/>
-<!--
                     <include name="addStaffMember"/>
--->
+                </methods>
+            </class>
+            <class name="NoorProject.Other.NoorLogOut"/>
+        </classes>
+    </test>
+    <test name="صلاحيات">
+        <classes>
+            <class name="NoorProject.Other.NoorLogin">
+                <methods>
+                    <include name="SecurityAndSafetyManagersInDistrictLogin"/>
+                </methods>
+            </class>
+            <class name="NoorProject.EduWaveSafeAndSecurity.A3SSMangerInDistrict.TheUsers">
+                <methods>
+                    <include name="LoginUserSwitch"/>
+                    <include name="addStaffMember"/>
                 </methods>
             </class>
             <class name="NoorProject.Other.NoorLogOut"/>
