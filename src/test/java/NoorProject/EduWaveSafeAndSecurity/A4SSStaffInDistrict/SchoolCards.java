@@ -39,7 +39,7 @@ public class SchoolCards {
     private By TDSchoolCardLOcator = By.id("ctl00_PlaceHolderMain_gvSchools_ctl02_tdSchoolCard");
 
     @Test
-    public void addSchoolCards()     {
+    public void addSchoolCards() {
 
         browserQA.close();
         NoorLogin Login = new NoorLogin();
@@ -56,18 +56,18 @@ public class SchoolCards {
         SwitchProfile.SwitchUser();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
         List ListRowsXpath = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int SchoolCardTableSize = ListRowsXpath.size();
         if (SchoolCardTableSize <= 1) {
             int SchoolCardTableSize1 = ListRowsXpath.size() + 2;
-            String TableSizeAddFormat1 = String.format("%02d" , SchoolCardTableSize1);
+            String TableSizeAddFormat1 = String.format("%02d", SchoolCardTableSize1);
             By VisitType1 = By.id("select2-ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat1 + "_ddlVisitType-container");
             By VisitTypeSearch1 = By.xpath("/html/body/span/span/span[1]/input");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitType1)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch1)).sendKeys(CardDescrption , Keys.ENTER);
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch1)).sendKeys(CardDescrption, Keys.ENTER);
             By VisitGoalLocator = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat1 + "_tbVisitGoal");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitGoalLocator)).sendKeys("Test");
             By ClickCalLocator = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat1 + "_clrVisitDate_ibtnOpenCalendar");
@@ -82,15 +82,15 @@ public class SchoolCards {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddMeassageResultLocator));
             String ActualResult = browserQA.findElement(AddMeassageResultLocator).getText();
             String ExcpectedReslut = "تمت عملية الاضافة بنجاح.";
-            Assert.assertEquals(ActualResult , ExcpectedReslut , "لم تتم عملية الاضافة بنجاح");
+            Assert.assertEquals(ActualResult, ExcpectedReslut, "لم تتم عملية الاضافة بنجاح");
         }
         if (SchoolCardTableSize >= 2 && SchoolCardTableSize < 22) {
             int SchoolCardTableSize2 = ListRowsXpath.size() + 1;
-            String TableSizeAddFormat2 = String.format("%02d" , SchoolCardTableSize2);
+            String TableSizeAddFormat2 = String.format("%02d", SchoolCardTableSize2);
             By VisitType2 = By.id("select2-ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat2 + "_ddlVisitType-container");
             By VisitTypeSearch2 = By.xpath("/html/body/span/span/span[1]/input");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitType2)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch2)).sendKeys(CardDescrption , Keys.ENTER);
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch2)).sendKeys(CardDescrption, Keys.ENTER);
             By VisitGoalLocator2 = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat2 + "_tbVisitGoal");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitGoalLocator2)).sendKeys("Test");
             By ClickCalLocator2 = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat2 + "_clrVisitDate_ibtnOpenCalendar");
@@ -105,15 +105,15 @@ public class SchoolCards {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddMeassageResultLocator2));
             String ActualResult2 = browserQA.findElement(AddMeassageResultLocator2).getText();
             String ExcpectedReslut2 = "تمت عملية الاضافة بنجاح.";
-            Assert.assertEquals(ActualResult2 , ExcpectedReslut2 , "لم تتم عملية الاضافة بنجاح");
+            Assert.assertEquals(ActualResult2, ExcpectedReslut2, "لم تتم عملية الاضافة بنجاح");
         }
         if (SchoolCardTableSize >= 22) {
             int SchoolCardTableSize3 = ListRowsXpath.size();
-            String TableSizeAddFormat3 = String.format("%02d" , SchoolCardTableSize3);
+            String TableSizeAddFormat3 = String.format("%02d", SchoolCardTableSize3);
             By VisitType23 = By.id("select2-ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat3 + "_ddlVisitType-container");
             By VisitTypeSearch23 = By.xpath("/html/body/span/span/span[1]/input");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitType23)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch23)).sendKeys(CardDescrption , Keys.ENTER);
+            waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitTypeSearch23)).sendKeys(CardDescrption, Keys.ENTER);
             By VisitGoalLocator23 = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat3 + "_tbVisitGoal");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(VisitGoalLocator23)).sendKeys("Test");
             By ClickCalLocator23 = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl" + TableSizeAddFormat3 + "_clrVisitDate_ibtnOpenCalendar");
@@ -128,16 +128,24 @@ public class SchoolCards {
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddMeassageResultLocator23));
             String ActualResult23 = browserQA.findElement(AddMeassageResultLocator23).getText();
             String ExcpectedReslut23 = "تمت عملية الاضافة بنجاح.";
-            Assert.assertEquals(ActualResult23 , ExcpectedReslut23 , "لم تتم عملية الاضافة بنجاح");
+            Assert.assertEquals(ActualResult23, ExcpectedReslut23, "لم تتم عملية الاضافة بنجاح");
         }
     }
 
     @Test
-    public void editSchoolCards() {
+    public void editSchoolCards() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
         By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl02_lbtnEdit");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLocator)).click();
@@ -147,14 +155,14 @@ public class SchoolCards {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditMessageResult));
         String ActualResult = browserQA.findElement(EditMessageResult).getText();
         String ExcpectedResult = "تمت عملية التعديل بنجاح.";
-        Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم عملية التعديل بنجاح");
+        Assert.assertEquals(ActualResult, ExcpectedResult, "لم تتم عملية التعديل بنجاح");
     }
 
     @Test
     public void deleteSchoolCards() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
@@ -172,7 +180,7 @@ public class SchoolCards {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessageResult));
         String ActualResult = browserQA.findElement(DeleteMessageResult).getText();
         String ExcpectedReslut = "تمت عملية الحذف بنجاح.";
-        Assert.assertEquals(ActualResult , ExcpectedReslut , "لم تتم عملية الحذف بنجاح");
+        Assert.assertEquals(ActualResult, ExcpectedReslut, "لم تتم عملية الحذف بنجاح");
     }
 
 }

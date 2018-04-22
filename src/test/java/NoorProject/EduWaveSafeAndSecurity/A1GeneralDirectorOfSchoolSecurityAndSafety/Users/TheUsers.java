@@ -367,7 +367,14 @@ public class TheUsers {
         browserQA.findElement(FaxNumber).sendKeys("7" + RandomNumber);
         browserQA.findElement(btnSaveLocator).click();
         By ValidationMessageAfterAddTheUser = By.id("ctl00_PlaceHolderMain_lblResult");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMessageAfterAddTheUser));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMessageAfterAddTheUser));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         String ActualResult = browserQA.findElement(ValidationMessageAfterAddTheUser).getText();
         String ExcpectedResult = "لا يمكن اضافة ملف لعدم وجود ملف له في شؤون المعلمين";
         if (ActualResult.equals(ExcpectedResult)) {

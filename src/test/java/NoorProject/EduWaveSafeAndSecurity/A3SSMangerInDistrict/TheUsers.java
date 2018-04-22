@@ -185,7 +185,14 @@ public class TheUsers {
                 Thread.sleep(100);
             }
         }
-        browserQA.findElement(DDLSerachTextSendOptionLoactor).sendKeys("محافظة الرياض 1" , Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                browserQA.findElement(DDLSerachTextSendOptionLoactor).sendKeys("محافظة الرياض 1" , Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
 
         for (int i = 0; i < 3; i++) {
             try {
