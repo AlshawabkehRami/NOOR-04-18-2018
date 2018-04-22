@@ -120,7 +120,14 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor)).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchSendOptionTxtLoactor)).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLOcator)).click();

@@ -101,7 +101,17 @@ public class TheReports {
                 System.out.println(e.getMessage());
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSTC)).sendKeys("الحد الغربي", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlDistrictSearchLocatorSTC)).sendKeys("الحد الغربي", Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+
+        }
         for (int i = 0; i < 3; i++) {
 
             try {
