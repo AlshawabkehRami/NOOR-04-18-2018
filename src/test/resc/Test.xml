@@ -8,7 +8,6 @@
 
 
 <suite name="AllTestCase">
-//888888888888
 
     <suite-files>
         <suite-file path="QA/SafetyAndSecurity/A1GeneralDirectorOfSchoolSecurityAndSafety/AllTestSuit.xml"/>
