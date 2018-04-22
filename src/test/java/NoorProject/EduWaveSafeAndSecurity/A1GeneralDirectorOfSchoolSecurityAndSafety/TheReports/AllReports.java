@@ -417,7 +417,15 @@ public class AllReports {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictSearchLocatorSWOSB)).sendKeys("عمان", Keys.ENTER);
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictSearchLocatorSWOSB)).sendKeys("عمان", Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenteLocatorSWOSB)).click();
