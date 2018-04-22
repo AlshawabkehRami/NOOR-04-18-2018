@@ -49,7 +49,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(NameOfTheReportLocator));
         String NameOfTheReportString = browserQA.findElement(NameOfTheReportLocator).getText();
         String NameOfThePageLString = "بيانات المباني";
-        Assert.assertEquals(NameOfTheReportString , NameOfThePageLString , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(NameOfTheReportString, NameOfThePageLString, "التقرير المطلوب غير متوفر");
     }
 
 
@@ -68,7 +68,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("بيانات المدرسة مع المراحل التعليمية");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportNameLocator1)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(OfficeNameLOcater1)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
@@ -79,7 +79,7 @@ public class ReportsMenu {
         }
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BackBTN1)).click();
-        Assert.assertEquals(browserQA.findElement(ReportNameLocator1).getText() , "بيانات المدرسة مع المراحل التعليمية" , "تم الروجع الى صفحة خاطئة");
+        Assert.assertEquals(browserQA.findElement(ReportNameLocator1).getText(), "بيانات المدرسة مع المراحل التعليمية", "تم الروجع الى صفحة خاطئة");
 
     }
 
@@ -96,14 +96,21 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("المدارس التي قامت بتعبئة الاستمارة ولم يتم اعتمادها");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLoactor2)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_Locator2)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("Form12" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("Form12", Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
+
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         String expected_result = "   المدارس التي قامت بتعبئة الاستمارة ولم يتم اعتمادها من قائد المدرسة   ";
         By acutal_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[5]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual__reuslt = waitQA.until(ExpectedConditions.visibilityOfElementLocated(acutal_result));
         String actual___result = actual__reuslt.getText();
         System.out.println(actual___result);
-        Assert.assertEquals(actual___result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual___result, expected_result, "التقرير المطلوب غير متوفر");
 
 
     }
@@ -120,7 +127,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("المدارس التي لم تقم بتعبئة الاستمارة");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocator3)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_Locator3)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("Form12" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("Form12", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
@@ -133,7 +140,7 @@ public class ReportsMenu {
         By actual_result = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[5]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr[4]/td[3]/table/tbody/tr/td/div/div/span");
         WebElement actual__result = waitQA.until(ExpectedConditions.visibilityOfElementLocated(actual_result));
         String actual___result = actual__result.getText();
-        Assert.assertEquals(actual___result , expected_result , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(actual___result, expected_result, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -144,7 +151,7 @@ public class ReportsMenu {
     //
 //معلومات بطاقات المدارس
     @Test
-    public void assessmentRate() throws InterruptedException {
+    public void assessmentRate()   {
 
 
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator)).click();
@@ -153,9 +160,9 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportLinkLocator4)).click();
         By ddlSupervisionCenterLocator = By.id("select2-ctl00_PlaceHolderMain_ddlSupervisionCenter-container");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSupervisionCenterLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ddlSchoolLocator4)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مدرسة سعيد بن المسيب التانوية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مدرسة سعيد بن المسيب التانوية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator));
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BackBTN1)).click();
 
@@ -175,7 +182,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("نسبة التقييم");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportLinkLocator5)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLFormNameLocator5)).click();
-        browserQA.findElement(SearchDDLOptionLocator).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
+        browserQA.findElement(SearchDDLOptionLocator).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
@@ -188,7 +195,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLoactr));
         String ReportTilte = browserQA.findElement(ReportTitleLoactr).getText();
         String NameOfTheReport = "الأمن والسلامة-نسب التقييم على مستوى الإدارة";
-        Assert.assertEquals(ReportTilte , NameOfTheReport , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportTilte, NameOfTheReport, "التقرير المطلوب غير متوفر");
     }
 
     private By ReportLinkLocator6 = By.linkText("الأمن والسلامة - نسبة الإدخال");
@@ -206,7 +213,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("نسبة الإدخال");
         browserQA.findElement(ReportLinkLocator6).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlFormNameLocator6)).click();
-        browserQA.findElement(SearchDDLOptionLocator).sendKeys("Form12" , Keys.ENTER);
+        browserQA.findElement(SearchDDLOptionLocator).sendKeys("Form12", Keys.ENTER);
 
         for (int i = 0; i < 3; i++) {
             try {
@@ -221,7 +228,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportTitleLoactor));
         String ReportName = browserQA.findElement(ReportTitleLoactor).getText();
         String NameOfTheReport = "الأمن والسلامة-نسب الإدخال على مستوى الإدارة";
-        Assert.assertEquals(ReportName , NameOfTheReport , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ReportName, NameOfTheReport, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -243,7 +250,7 @@ public class ReportsMenu {
         String ActualResult = browserQA.findElement(ReportTitle).getText();
         String ExcpectedResult = "بيانات المستخدمين بالمدارس";
 
-        Assert.assertEquals(ActualResult , ExcpectedResult , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ActualResult, ExcpectedResult, "التقرير المطلوب غير متوفر");
 
     }
 
@@ -259,7 +266,7 @@ public class ReportsMenu {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachTextReportLocator)).sendKeys("عدد الطلاب مع ملكية مبنى المدرسة");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TheReportNameLocator9)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(Drop_down_list_Locator9)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية" , Keys.ENTER);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchDDLOptionLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchButtonLocator)).click();
 
 
@@ -268,6 +275,6 @@ public class ReportsMenu {
         String ActualResult = browserQA.findElement(ReportTitle).getText();
         String ExcpectedResult = " عدد الطلاب مع ملكية مبنى المدرسة";
 
-        Assert.assertEquals(ActualResult , ExcpectedResult , "التقرير المطلوب غير متوفر");
+        Assert.assertEquals(ActualResult, ExcpectedResult, "التقرير المطلوب غير متوفر");
     }
 }
