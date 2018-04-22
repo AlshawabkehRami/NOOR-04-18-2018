@@ -191,22 +191,14 @@ public class SectionsForms {
     @Test
     public void editSections() throws InterruptedException {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
-
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
                 break;
             } catch (Exception e) {
-                Thread.sleep(200);
+                Thread.sleep(100);
             }
         }
         for (int i = 0; i < 3; i++) {
