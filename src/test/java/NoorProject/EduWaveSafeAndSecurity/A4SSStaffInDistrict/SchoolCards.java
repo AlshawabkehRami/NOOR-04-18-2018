@@ -171,7 +171,14 @@ public class SchoolCards {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         By DeleteLinkLocator = By.id("ctl00_PlaceHolderMain_gvSchoolCard_ctl02_lbtnDelete");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteLinkLocator)).click();
         By YesLinkConfrmation = By.id("ctl00_ibtnYes");
