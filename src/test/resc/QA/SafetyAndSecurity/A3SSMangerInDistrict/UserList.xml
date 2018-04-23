@@ -8,6 +8,20 @@
 
 
 <suite name="مدير الامن والسلامة باردارة التعليم">
+
+    <test name="أضافةالاقسام">
+
+        <classes>
+            <class name="NoorProject.Other.NoorLogin">
+                <methods>
+                    <include name="DirectorGeneralofTeachersAffairsintheMinistry"/>
+                </methods>
+            </class>
+            <class name="NoorProject.TeacherAffairs.GeneralDirectorInMinistry.SchoolsAndDepartments.Departments.Department"/>
+            <class name="NoorProject.Other.NoorLogOut"/>
+        </classes>
+
+    </test>
     <test name="المستخدمون">
         <classes>
             <class name="NoorProject.Other.NoorLogin">
