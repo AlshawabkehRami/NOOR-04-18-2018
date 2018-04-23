@@ -17,6 +17,7 @@
             </class>
             <class name="NoorProject.EduWaveSafeAndSecurity.A1GeneralDirectorOfSchoolSecurityAndSafety.TheReports.AllReports">
                 <methods>
+                    <include name="SwitchProfile"/>
                     <include name="viewDistributeStudentsToClasses"/>
                     <include name="buildingInformation"/>
                     <include name="inputRatio"/>

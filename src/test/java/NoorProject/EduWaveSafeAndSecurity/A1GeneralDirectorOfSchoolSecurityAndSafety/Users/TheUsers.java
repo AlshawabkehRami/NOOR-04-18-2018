@@ -149,7 +149,6 @@ public class TheUsers {
         browserQA.findElement(PasswordLocator).sendKeys("1234");
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
