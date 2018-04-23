@@ -195,15 +195,22 @@ public class AllReports {
             }
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLFormNameSearchLoactorIR)).sendKeys("Selenium Form Dont Delete" , Keys.ENTER);
             for (int i = 0; i < 3; i++) {
-                try {
-                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorIR)).click();
-                    break;
-                } catch (Exception e) {
-                    Thread.sleep(200);
-                }
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNSearchLocatorIR)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
             }
+        }
             By ReportInsideLabelLocator = By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div/div[7]/div/span/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/table/tbody/tr[5]/td[3]/table/tbody/tr/td/div/div");
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideLabelLocator));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideLabelLocator));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
             String ActualResult = browserQA.findElement(ReportInsideLabelLocator).getText();
             String ExpectedResult = "الأمن والسلامة-نسب الإدخال على مستوى الوزارة";
             Assert.assertEquals(ActualResult , ExpectedResult , "التقرير المطلوب غير متوفر");

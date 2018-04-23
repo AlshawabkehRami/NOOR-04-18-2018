@@ -344,7 +344,14 @@ public class InternalItems {
         int TableSizeForSections = SectionTableListDelet.size();
         if (TableSizeForSections <= 1) {
             By SectionDescLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl03_tbAddFormSectionDesc");
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescLocator)).sendKeys("Test");
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescLocator)).sendKeys("Test");
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             By AddLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl03_lbtnAddFormSectionDesc");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkLocator)).click();
             By ExternalLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnItems");
