@@ -195,7 +195,14 @@ public class InternalItems {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
         List SectionTableListDelet = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int TableSizeForSections = SectionTableListDelet.size();
         if (TableSizeForSections <= 1) {

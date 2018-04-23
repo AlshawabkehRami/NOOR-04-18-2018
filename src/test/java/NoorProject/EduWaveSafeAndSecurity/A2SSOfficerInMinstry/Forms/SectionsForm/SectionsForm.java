@@ -139,9 +139,24 @@ public class SectionsForm {
                 By SectionDescrptionSplit = By.id("ctl00_PlaceHolderMain_gvSections_ctl" + TableSizeAddFormat + "_tbAddFormSectionDesc");
                 Random Rand = new Random();
                 int RandomNumber = Rand.nextInt(1000000);
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescrptionSplit)).sendKeys("Rami" + RandomNumber);
+
+                for (int i = 0; i < 3; i++) {
+                    try {
+                        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescrptionSplit)).sendKeys("Rami" + RandomNumber);
+                        break;
+                    } catch (Exception e) {
+                        Thread.sleep(100);
+                    }
+                }
                 By AddLinkSpilt = By.id("ctl00_PlaceHolderMain_gvSections_ctl" + TableSizeAddFormat + "_lbtnAddFormSectionDesc");
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkSpilt)).click();
+                for (int i = 0; i < 3; i++) {
+                    try {
+                        waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddLinkSpilt)).click();
+                        break;
+                    } catch (Exception e) {
+                        Thread.sleep(100);
+                    }
+                }
                 By AddSectionsMessageLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddSectionsMessageLocator));
                 String ActualResult = browserQA.findElement(AddSectionsMessageLocator).getText();
@@ -216,7 +231,15 @@ public class SectionsForm {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLocator)).click();
         By SectionDescLoactor = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_tbFormSectionDesc");
         Random Rand = new Random();
@@ -249,7 +272,14 @@ public class SectionsForm {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
         List SectionTableSize = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int TableSizeDotSize = SectionTableSize.size();
         if (TableSizeDotSize == (1)) {
@@ -274,7 +304,16 @@ public class SectionsForm {
                 Assert.fail("حدث خلل لعميلة الحذف");
             }
         } else {
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteLinkLocator)).click();
+
+
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeleteLinkLocator)).click();
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(YesConfrmationLocator)).click();
             By MessageLocator = By.id("ctl00_PlaceHolderMain_lblOpertioanlResult");
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(MessageLocator));

@@ -293,6 +293,7 @@ public class TheReports {
             }
         }
 
+        Thread.sleep(100);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(search_field_2_LocatorSDWES)).sendKeys("الحد الغربي", Keys.ENTER);
         for (int i = 0; i < 3; i++) {
             try {
@@ -385,9 +386,33 @@ public class TheReports {
                 Thread.sleep(100);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormNameSearchLoactorAR)).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLoactorAR)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideNameLoactorAR));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormNameSearchLoactorAR)).sendKeys("Selenium Form Dont Delete", Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ibtnSearchLoactorAR)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideNameLoactorAR));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
+        }
+
+
         String ReportInsideName = browserQA.findElement(ReportInsideNameLoactorAR).getText();
         String ReportInsideNameString = "الأمن والسلامة-نسب التقييم على مستوى الوزارة";
         Assert.assertEquals(ReportInsideName, ReportInsideNameString, "لتقرير المطلوب غير متوفر حاليا");
