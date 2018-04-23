@@ -155,25 +155,6 @@ public class TheUsers {
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض" , Keys.ENTER);
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlCityLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
-        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1" , Keys.ENTER);
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlRegionLOcator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(200);
-            }
-        }
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1" , Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
@@ -296,14 +277,6 @@ public class TheUsers {
         browserQA.findElement(PasswordLocator).sendKeys("1234");
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLManagmentRegionSearchLocator).sendKeys("الرياض" , Keys.ENTER);
-        Thread.sleep(500);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlCityLocator)).click();
-        browserQA.findElement(DDlCitySearchLocator).sendKeys("محافظة الرياض 1" , Keys.ENTER);
-        Thread.sleep(500);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlRegionLOcator)).click();
-        browserQA.findElement(DDlRegionSearchLOcator).sendKeys("مركز الرياض 1" , Keys.ENTER);
         browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
         browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
         browserQA.findElement(HouseNoLocator).sendKeys("123");
