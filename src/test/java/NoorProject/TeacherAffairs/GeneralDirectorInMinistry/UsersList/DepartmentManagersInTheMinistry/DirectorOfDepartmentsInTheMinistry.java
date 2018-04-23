@@ -3,8 +3,10 @@
  */
 package NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry;
 
+import NoorProject.TeacherAffairs.GeneralDirectorInMinistry.SchoolsAndDepartments.Departments.Department;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -42,20 +44,19 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By DDLManagmentRegionLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlManagmentRegion-container");
     private By btnSaveLocator = By.id("ctl00_PlaceHolderMain_ibtnSave");
 
+
     Random Rand = new Random();
     int RandomNumberG = Rand.nextInt(1000000);
 
     //أضافة مدير القسم بالوزارة
     @Test
-    public void AddDirectorOfDepartmentsInTheMinistry()   {
+    public void AddDirectorOfDepartmentsInTheMinistry() {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UsersMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(MyInputLocator)).sendKeys("مديرو القسم");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLinkLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddedNewUserLinkLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator)).sendKeys("1" + RandomNumberG);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("أسبانيا" , Keys.ENTER);
     }
 
     public static String UserIdToPassString = null;
@@ -111,7 +112,10 @@ public class DirectorOfDepartmentsInTheMinistry {
             browserQA.findElement(CBTeacherDepartmentLocator).click();
             browserQA.findElement(btnSaveLocator).click();
         } else {
-            Assert.fail("يجب اضافة اقسام للفئات التشكيلية");
+
+
+            Department AddDept = new Department();
+            AddDept.AddModeratorUser();
         }
         browserQA.close();
     }

@@ -32,28 +32,26 @@ public class Department {
 
     @Test
     public void AddModeratorUser() throws InterruptedException {
-
-        for ( int i=0;i<50;i++) {
-            WebElement SchooleAndDeptsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchooleAndDeptsMainMenuLocator));
-            SchooleAndDeptsMainMenuLocatorWait.click();
-
-            WebElement DeptsLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeptsLoactor));
-            DeptsLoactorWait.click();
-
-            Thread.sleep(1000);
-
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_level_Locator)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_Locator)).sendKeys("وزار" , Keys.ENTER);
-            Thread.sleep(1000);
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_Locator)).click();
-            Random rand = new Random();
-            int random_numbers = rand.nextInt();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_2_Locator)).sendKeys("Test" + random_numbers);
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_ministry_Locator)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_management_Locator)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_office_Locator)).click();
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_add_Locator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchooleAndDeptsMainMenuLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DeptsLoactor)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(drop_down_list_level_Locator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_Locator)).sendKeys("وزار" , Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_search_Locator)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(100);
+            }
         }
+        Random rand = new Random();
+        int random_numbers = rand.nextInt();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(txt_field_2_Locator)).sendKeys("Test" + random_numbers);
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_ministry_Locator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_management_Locator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(check_box_office_Locator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(btn_add_Locator)).click();
+
     }
 }
 
