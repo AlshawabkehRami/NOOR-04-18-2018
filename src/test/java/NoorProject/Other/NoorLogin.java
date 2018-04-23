@@ -59,6 +59,7 @@ public class NoorLogin {
         browserQA = new FirefoxDriver();*/
         ChromeDriverManager.getInstance().setup();
         browserQA = new ChromeDriver();
+        browserQA.manage().window().maximize();
         waitQA = new WebDriverWait(browserQA , 10);
         browserQA.navigate().to(URLQA);
         browserQA.manage().timeouts().pageLoadTimeout(10 , TimeUnit.SECONDS);
