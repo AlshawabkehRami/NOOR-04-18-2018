@@ -54,7 +54,14 @@ public class SectionsForm {
             AddNewForms.addSafetyForms();
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
-            waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+            for (int i = 0; i < 3; i++) {
+                try {
+                    waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+                    break;
+                } catch (Exception e) {
+                    Thread.sleep(100);
+                }
+            }
             waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
             List SectionTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
             int TableSize = SectionTableList.size();
@@ -182,15 +189,11 @@ public class SectionsForm {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormStatusSearchLocator)).sendKeys("غير منشور" , Keys.ENTER);
+        Thread.sleep(1000);
 
-        for (int i = 0; i < 2; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
+
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SerachButtonLocator)).click();
+
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBack)).click();
     }
