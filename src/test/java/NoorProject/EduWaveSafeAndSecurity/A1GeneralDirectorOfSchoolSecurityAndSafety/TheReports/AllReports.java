@@ -255,7 +255,14 @@ public class AllReports {
                 Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideNameLoactorAR));
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportInsideNameLoactorAR));
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
         String ActualResult = browserQA.findElement(ReportInsideNameLoactorAR).getText();
         String ExpectedResult = "الأمن والسلامة-نسب التقييم على مستوى الوزارة";
         Assert.assertEquals(ActualResult , ExpectedResult , "التقرير المطلوب غير متوفر");
@@ -366,7 +373,14 @@ public class AllReports {
             }
 
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(OfficeSearchLocatorSDWES)).sendKeys("الخالدية" , Keys.ENTER);
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(OfficeSearchLocatorSDWES)).sendKeys("الخالدية" , Keys.ENTER);
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
 
         for (int i = 0; i < 3; i++) {
             try {

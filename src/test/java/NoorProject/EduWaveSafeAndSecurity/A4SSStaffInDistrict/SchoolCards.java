@@ -39,7 +39,7 @@ public class SchoolCards {
     private By TDSchoolCardLOcator = By.id("ctl00_PlaceHolderMain_gvSchools_ctl02_tdSchoolCard");
 
     @Test
-    public void addSchoolCards() {
+    public void addSchoolCards() throws InterruptedException {
 
         browserQA.close();
         NoorLogin Login = new NoorLogin();
@@ -57,7 +57,14 @@ public class SchoolCards {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolCardsMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSupervisionCenterSearchLocator)).sendKeys("مكتب الخالدية الشمالية", Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
+        for (int i = 0; i < 3; i++) {
+            try {
+                waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBSearchLoactor)).click();
+                break;
+            } catch (Exception e) {
+                Thread.sleep(200);
+            }
+        }
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(TDSchoolCardLOcator)).click();
         List ListRowsXpath = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
         int SchoolCardTableSize = ListRowsXpath.size();
