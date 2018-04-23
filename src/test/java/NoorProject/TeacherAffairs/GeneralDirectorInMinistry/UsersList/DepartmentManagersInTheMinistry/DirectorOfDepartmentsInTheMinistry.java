@@ -1,7 +1,6 @@
 /*
  * Created By Rami Alshawabkeh  3/15/18 2:30 PM
  */
-
 package NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry;
 
 import org.openqa.selenium.By;
@@ -24,12 +23,6 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By IbtnCheckIdentificationIDLocator = By.id("ctl00_PlaceHolderMain_ibtnCheckIdentificationID0");
     private By DDlNationalityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlNationality-container");
     private By DDLSearchOption = By.xpath("/html/body/span/span/span[1]/input");
-    private By PassportNumberLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbPassportNumber");
-    private By CLRIdentificationDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrIdentificationDate_ibtnOpenCalendar");
-    private By CLRIdentificationDayLocator = By.xpath("/html/body/div/table/tbody/tr[3]/td[3]");
-    private By CLRResidenceDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrResidenceDate_ibtnOpenCalendar");
-    private By CLRResidenceDayLocator = By.xpath("/html/body/div/table/tbody/tr[1]/td[7]");
-    private By DdlIdentificationPlaceLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlIdentificationPlace-container");
     private By ArabicFirstNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicFirstName");
     private By ArabicSecondNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicSecondName");
     private By ArabicThirdNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicThirdName");
@@ -41,34 +34,12 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By DdlGenderLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlGender-container");
     private By BirthDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrBirthDate_ibtnOpenCalendar");
     private By BirthDateLocatorDate = By.xpath("/html/body/div/table/tbody/tr[3]/td[3]");
-    private By ArabicBirthPlaceLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicBirthPlace");
-    private By EnglishBirthPlaceLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbEnglishBirthPlace");
-    private By DDlReligionLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlReligion-container");
-    private By DDLBloodTypesLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlBloodTypes-container");
-    private By DDlResidenceTypeLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlResidenceType-container");
-    private By DDLResidenceOwnerShipLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlResidenceOwnerShip-container");
-    private By DDlSocialSituationLOcator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlSocialSituation-container");
     private By UserAuthenticationUCLocatr = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbUserName");
     private By UserAuthenticationUC_ibtnGoLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ibtnGo");
     private By UserAuthenticationUClblUserNameVerifyLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_lblUserNameVerify");
     private By PasswordLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbPassword");
     private By ConfirmPasswordLoactor = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbConfirmPassword");
     private By DDLManagmentRegionLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlManagmentRegion-container");
-    private By DDlCityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlCity-container");
-    private By DDlRegionLOcator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlRegion-container");
-    private By MainStreetLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbMainStreet");
-    private By SubStreetLOcator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbSubStreet");
-    private By HouseNoLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbHouseNo");
-    private By HouseNextToLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbHouseNextTo");
-    private By TelephoneNo1Locator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbTelephoneNo1");
-    private By TelephoneNo2LOcator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbTelephoneNo2");
-    private By AdmissionMobileNoLOcator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbAdmissionMobileNo");
-    private By EmailAddressLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbEmailAddress");
-    private By StreetAddressLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbStreetAddress");
-    private By AddressInVacationLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbAddressInVacation");
-    private By ZipCodeLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbZipCode");
-    private By POBoxLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbPOBox");
-    private By FaxNumber = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_oAddressUC_tbFaxNumber");
     private By btnSaveLocator = By.id("ctl00_PlaceHolderMain_ibtnSave");
 
     Random Rand = new Random();
@@ -76,7 +47,7 @@ public class DirectorOfDepartmentsInTheMinistry {
 
     //أضافة مدير القسم بالوزارة
     @Test
-    public void AddDirectorOfDepartmentsInTheMinistry() throws InterruptedException {
+    public void AddDirectorOfDepartmentsInTheMinistry()   {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UsersMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(MyInputLocator)).sendKeys("مديرو القسم");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLinkLocator)).click();
@@ -85,23 +56,18 @@ public class DirectorOfDepartmentsInTheMinistry {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalityLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("أسبانيا" , Keys.ENTER);
-        Thread.sleep(500);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(PassportNumberLocator)).sendKeys("1" + RandomNumberG);
     }
+
     public static String UserIdToPassString = null;
+
     @Test
     public void UserId() throws InterruptedException {
         Thread.sleep(500);
         UserIdToPassString = browserQA.findElement(By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_lblIdentificationNumber")).getText();
     }
+
     @Test
     public void AddedPart2() throws InterruptedException {
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRIdentificationDateLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRIdentificationDayLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDateLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRResidenceDayLocator)).click();
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlIdentificationPlaceLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("الشمال" , Keys.ENTER);
         browserQA.findElement(ArabicFirstNameLocator).sendKeys("رامي");
         browserQA.findElement(ArabicSecondNameLocator).sendKeys("أحمد");
         browserQA.findElement(ArabicThirdNameLocator).sendKeys("علي");
@@ -112,36 +78,15 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(EnglishLastNameLocator).sendKeys("Alshawabkeh");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlGenderLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLSearchOption)).sendKeys("بنين" , Keys.ENTER);
-        Thread.sleep(1000);
         for (int i = 0; i < 3; i++) {
             try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            try {
                 waitQA.until(ExpectedConditions.visibilityOfElementLocated(BirthDateLocatorDate)).click();
                 break;
             } catch (Exception e) {
-                Thread.sleep(100);
+                Thread.sleep(200);
             }
         }
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(ArabicBirthPlaceLocator)).sendKeys(" مكان الميلاد بالعربية ");
-        browserQA.findElement(EnglishBirthPlaceLocator).sendKeys(" مكان الميلاد بالإنجليزية ");
-        browserQA.findElement(DDlReligionLocator).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("أخرى" , Keys.ENTER);
-        browserQA.findElement(DDLBloodTypesLocator).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("AB+" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlResidenceTypeLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("بيت شعر" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLResidenceOwnerShipLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("ملكية بالوقف/بالهبة" , Keys.ENTER);
-        waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlSocialSituationLOcator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("مطلق" , Keys.ENTER);
         browserQA.findElement(UserAuthenticationUCLocatr).clear();
         browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("Rami" + RandomNumberG);
         browserQA.findElement(UserAuthenticationUC_ibtnGoLocator).click();
@@ -154,53 +99,11 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(ConfirmPasswordLoactor).clear();
         browserQA.findElement(ConfirmPasswordLoactor).sendKeys("1234");
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLManagmentRegionLocator)).click();
-        browserQA.findElement(DDLSearchOption).sendKeys("الرياض" , Keys.ENTER);
-        Thread.sleep(300);
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlCityLocator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            try {
-                browserQA.findElement(DDLSearchOption).sendKeys("محافظة الرياض 1" , Keys.ENTER);
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            try {
-                waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlRegionLOcator)).click();
-                break;
-            } catch (Exception e) {
-                Thread.sleep(100);
-            }
-        }
-        browserQA.findElement(DDLSearchOption).sendKeys("مركز الرياض 1" , Keys.ENTER);
-        browserQA.findElement(MainStreetLocator).sendKeys(" الشارع الرئيسي ");
-        browserQA.findElement(SubStreetLOcator).sendKeys(" الشارع الفرعي ");
-        browserQA.findElement(HouseNoLocator).sendKeys("123");
-        browserQA.findElement(HouseNextToLocator).sendKeys("بجوار");
-        browserQA.findElement(TelephoneNo1Locator).sendKeys("4546545646");
-        browserQA.findElement(TelephoneNo2LOcator).sendKeys("3546546545");
-        browserQA.findElement(AdmissionMobileNoLOcator).sendKeys("599999999");
-        browserQA.findElement(EmailAddressLocator).sendKeys("www.Rami" + RandomNumberG + "@gmail.com");
-        browserQA.findElement(StreetAddressLocator).sendKeys("7" + RandomNumberG);
-        browserQA.findElement(AddressInVacationLocator).sendKeys("7" + RandomNumberG);
-        browserQA.findElement(ZipCodeLocator).sendKeys("7" + RandomNumberG);
-        browserQA.findElement(POBoxLocator).sendKeys("7" + RandomNumberG);
-        browserQA.findElement(FaxNumber).sendKeys("7" + RandomNumberG);
         browserQA.findElement(btnSaveLocator).click();
         By DDlJobTitleLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlJobTitle-container");
         By DDLCurrentWorkLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlCurrentWork-container");
-        Thread.sleep(1000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlJobTitleLocator)).click();
         browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
-        Thread.sleep(1000);
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLCurrentWorkLocator)).click();
         browserQA.findElement(DDLSearchOption).sendKeys("مدير القسم في الوزارة" , Keys.ENTER);
         By CBTeacherDepartmentLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_cblTeacherDepartment_0");
