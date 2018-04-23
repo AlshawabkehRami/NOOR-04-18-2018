@@ -23,7 +23,6 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By AddedNewUserLinkLocator = By.id("ctl00_PlaceHolderMain_lbtnAddManagementUser");
     private By UserIdFieldLocator = By.id("ctl00_PlaceHolderMain_tbIdentification");
     private By IbtnCheckIdentificationIDLocator = By.id("ctl00_PlaceHolderMain_ibtnCheckIdentificationID0");
-    private By DDlNationalityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlNationality-container");
     private By DDLSearchOption = By.xpath("/html/body/span/span/span[1]/input");
     private By ArabicFirstNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicFirstName");
     private By ArabicSecondNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicSecondName");
@@ -112,10 +111,8 @@ public class DirectorOfDepartmentsInTheMinistry {
             browserQA.findElement(CBTeacherDepartmentLocator).click();
             browserQA.findElement(btnSaveLocator).click();
         } else {
+            Assert.fail("يجب اضافة فئات تشكيلية ");
 
-
-            Department AddDept = new Department();
-            AddDept.AddModeratorUser();
         }
         browserQA.close();
     }
