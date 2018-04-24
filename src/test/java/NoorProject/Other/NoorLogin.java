@@ -206,6 +206,7 @@ public class NoorLogin {
         ChromeDriverManager.getInstance().setup();
         browserQA = new ChromeDriver();
         waitQA = new WebDriverWait(browserQA , 10);
+        browserQA.manage().window().maximize();
         browserQA.navigate().to(URLQA);
         browserQA.manage().timeouts().pageLoadTimeout(10 , TimeUnit.SECONDS);
 
