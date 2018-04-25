@@ -38,6 +38,7 @@ public class SSForms {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(BTNBackLocator)).click();
     }
 
+
     @Test
     public void editForm() {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SettingMenuLocator)).click();
@@ -75,6 +76,24 @@ public class SSForms {
 
 
             }
+        }
+    }
+
+    @Test
+    public void approveTheForme() {
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SettingMenuLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLocator)).click();
+        waitQA.until(ExpectedConditions.visibilityOfElementLocated(SSLinkLocator)).click();
+        WebElement Table = browserQA.findElement(By.id("ctl00_PlaceHolderMain_gvForm"));
+        List Rows = Table.findElements(By.cssSelector("tr[id*='ctl00_PlaceHolderMain_gvForm']"));
+
+        if (Rows.size() <= 1) {
+            System.out.println("يجب نشر نماذج للامن والسلامة");
+        } else {
+
+            System.out.println(browserQA.findElement(By.linkText("اعتماد")).isDisplayed());
+
+
         }
     }
 }
