@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  ~ Created By  Rami AlShawabkeh  4/24/18 12:29 PM
+  -->
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="مدير مدرسة">
+    <test name="الامن والسلامة">
+
+        <classes>
+            <class name="NoorProject.Other.NoorLogin">
+                <methods>
+                    <include name="SchoolAdminLoginQA"/>
+                </methods>
+            </class>
+            <class name="NoorProject.EduWaveSafeAndSecurity.A5SchoolAdmin.SSForms">
+                <methods>
+<!--
+                    <include name="viewForm"/>
+-->
+                    <include name="editForm"/>
+
+                </methods>
+            </class>
+<!--
+            <class name="NoorProject.Other.NoorLogOut"/>
+-->
+        </classes>
+
+    </test>
+
+</suite>
