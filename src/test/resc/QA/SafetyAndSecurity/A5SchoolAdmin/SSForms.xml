@@ -17,9 +17,7 @@
             </class>
             <class name="NoorProject.EduWaveSafeAndSecurity.A5SchoolAdmin.SSForms">
                 <methods>
-<!--
                     <include name="viewForm"/>
--->
                     <include name="editForm"/>
 
                 </methods>
