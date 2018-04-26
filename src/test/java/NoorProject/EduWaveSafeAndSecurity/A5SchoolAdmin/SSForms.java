@@ -91,8 +91,25 @@ public class SSForms {
             System.out.println("يجب نشر نماذج للامن والسلامة");
         } else {
 
-            System.out.println(browserQA.findElement(By.linkText("اعتماد")).isDisplayed());
 
+
+
+
+/*
+            System.out.println(browserQA.findElement(By.linkText("اعتماد")).isDisplayed());
+            boolean A1 = browserQA.findElement(By.linkText("اعتماد")).isDisplayed();
+            String B1 = String.valueOf(A1);
+
+            if (B1.equals("true")) {
+
+                browserQA.findElement(By.linkText("اعتماد")).click();
+                browserQA.findElement(By.id("ctl00_ibtnYes")).click();
+
+                Assert.assertEquals(browserQA.findElement(By.id("ctl00_PlaceHolderMain_lblOperationResult")).getText() , "تمت عملية اعتماد النموذج بنجاح." , "لم تتم عملية اعتماد النموذج بنجاح");
+            } else {
+                System.out.println("يجب اعتماد النموذج من قبل المسؤول المدرسي");
+            }
+*/
 
         }
     }
