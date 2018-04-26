@@ -66,7 +66,7 @@ public class SSForms {
                     waitQA.until(ExpectedConditions.visibilityOfElementLocated(By.id("ctl00_PlaceHolderMain_lblOpertioanlResult")));
                     String ActualResult = browserQA.findElement(By.id("ctl00_PlaceHolderMain_lblOpertioanlResult")).getText();
                     String ExpecteResult = "تمت عملية حفظ البيانات بنجاح.";
-                    Assert.assertEquals(ActualResult , ExpecteResult , "لم تتم عملية الحفظ بنجاح");
+                    Assert.assertEquals(ActualResult , ExpecteResult , "لم تتم عملية التعديل بنجاح");
 
                     browserQA.findElement(By.id("ctl00_PlaceHolderMain_ibtnBack")).click();
                     break;
@@ -91,26 +91,18 @@ public class SSForms {
             System.out.println("يجب نشر نماذج للامن والسلامة");
         } else {
 
+            for (int i = 2; i < Rows.size() + 1; i++) {
+                String IdFormat = String.format("%02d" , i);
 
+                By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvForm_ctl" + IdFormat + "_lbtnAccept");
+                try {
+                    browserQA.findElement(EditLinkLocator);
+                    System.out.println("Motasem");
 
+                } catch (org.openqa.selenium.NoSuchElementException e) {
 
-
-/*
-            System.out.println(browserQA.findElement(By.linkText("اعتماد")).isDisplayed());
-            boolean A1 = browserQA.findElement(By.linkText("اعتماد")).isDisplayed();
-            String B1 = String.valueOf(A1);
-
-            if (B1.equals("true")) {
-
-                browserQA.findElement(By.linkText("اعتماد")).click();
-                browserQA.findElement(By.id("ctl00_ibtnYes")).click();
-
-                Assert.assertEquals(browserQA.findElement(By.id("ctl00_PlaceHolderMain_lblOperationResult")).getText() , "تمت عملية اعتماد النموذج بنجاح." , "لم تتم عملية اعتماد النموذج بنجاح");
-            } else {
-                System.out.println("يجب اعتماد النموذج من قبل المسؤول المدرسي");
+                }
             }
-*/
-
         }
     }
 }
