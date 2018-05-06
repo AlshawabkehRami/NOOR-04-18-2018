@@ -80,6 +80,7 @@ public class SSForms {
     }
 
     @Test
+
     public void approveTheForme() {
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SettingMenuLocator)).click();
         waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLocator)).click();
@@ -96,10 +97,10 @@ public class SSForms {
 
                 By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvForm_ctl" + IdFormat + "_lbtnAccept");
                 try {
-                    browserQA.findElement(EditLinkLocator);
-                    System.out.println("Motasem");
+                    browserQA.findElement(EditLinkLocator).click();
+                    browserQA.findElement(By.id("ctl00_ibtnYes")).click();
 
-                } catch (org.openqa.selenium.NoSuchElementException e) {
+                } catch (Exception e) {
 
                 }
             }
