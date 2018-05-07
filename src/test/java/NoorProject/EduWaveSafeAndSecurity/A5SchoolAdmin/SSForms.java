@@ -94,15 +94,10 @@ public class SSForms {
 
             for (int i = 2; i < Rows.size() + 1; i++) {
                 String IdFormat = String.format("%02d" , i);
+                By UnApporveLoactor = By.id("ctl00_PlaceHolderMain_gvForm_ctl" + IdFormat + "_lbtnUnAccept");
+                By ApproveLinkLocator = By.id("ctl00_PlaceHolderMain_gvForm_ctl" + IdFormat + "_lbtnAccept");
 
-                By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvForm_ctl" + IdFormat + "_lbtnAccept");
-                try {
-                    browserQA.findElement(EditLinkLocator).click();
-                    browserQA.findElement(By.id("ctl00_ibtnYes")).click();
 
-                } catch (Exception e) {
-
-                }
             }
         }
     }
